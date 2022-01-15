@@ -94,8 +94,8 @@ export default function Home() {
             </div>
           </div>
           <h3 className={styles.aboutbtn}><Link href="/" >{t("common:more")}</Link></h3>
-        </section>
-        <section id="project">
+        </section >
+        <section id="projects">
           <h1>{t("projects:title")}</h1>
           <div className={styles.projectsearch}>
             <FontAwesomeIcon icon={faSearch}/>

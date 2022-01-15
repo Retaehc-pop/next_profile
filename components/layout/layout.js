@@ -66,9 +66,9 @@ export const Layout = ({children}) =>{
             <ActiveLink children="Home"  href="/">
                 <img src="/favicon.ico" width={50} height={50}/>
             </ActiveLink>
-            <p>{t("about:title")}</p>
-            <p>{t("projects:title")}</p>
-            <p>{t("common:contact")}</p>
+            <Link href="#about"><p>{t("about:title")}</p></Link>
+            <Link href="#projects"><p>{t("projects:title")}</p></Link>
+            <Link href="/contact"><p>{t("common:contact")}</p></Link>
         </nav>
         {children}
         <footer className={styles.footer}>

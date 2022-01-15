@@ -26,6 +26,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--color-background);
   color: var(--color-primary);
+  scroll-behavior: smooth;
 }
 
 a {
