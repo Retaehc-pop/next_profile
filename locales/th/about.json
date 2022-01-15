@@ -1,0 +1,25 @@
+{
+    "title":"แนะนำตัว",
+    "name":"ปภพ เลขาปัญญาพร, ป๊อบ",
+    "dateOfBirth":"วันเกิด",
+    "birthDay":"20 มีนาคม",
+    "countryOfCitizen":"สัญชาติ",
+    "thailand":"ไทย",
+    "email":"อีเมล",
+    "phone":"โทรศัพท์",
+    "address":"ที่อยู่",
+    "location":"กรุงเทพ, ประเทศไทย",
+    "education":"การศึกษา",
+    "school":"โรงเรียนอัสสัมชัญ",
+    "organisation":"องค์กร",
+    "spaceRole":"รองประทานชมรม, โปรแกรมเมอร์",
+    "interactRole":"ประทานชมรม และ รองประทานภาค",
+    "genstemRole":"เว็บไซท์โปรแกรมเมอร์",
+    "skill":"ทักษะ",
+    "programming":"เขียนโปรแกรม",
+    "language":"ภาษา",
+    "spokenLanguage":"ไทย, อังกฤซ, เยอร์มัน",
+    "other":"อื่น ๆ ",
+    "otherSkill":"บินโดรน,  ถ่ายรูป"
+
+}

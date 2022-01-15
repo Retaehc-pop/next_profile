@@ -1,0 +1,9 @@
+{
+    "locales": ["en-US","th","de"],
+    "defaultLocale": "en-US",
+    "pages":{
+        "*": ["common","about","projects"],
+        "/about": ["about"],
+        "/projects": ["projects"]
+    }
+}
