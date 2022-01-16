@@ -93,7 +93,7 @@ export default function Home() {
                 </div>
             </div>
           </div>
-          <h3 className={styles.aboutbtn}><Link href="/" >{t("common:more")}</Link></h3>
+          <Link href="/about" ><h3 className={styles.aboutbtn}>{t("common:more")}</h3></Link>
         </section >
         <section id="projects">
           <h1>{t("projects:title")}</h1>
