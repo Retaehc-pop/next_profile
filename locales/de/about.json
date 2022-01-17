@@ -21,5 +21,9 @@
     "spokenLanguage":"Thai, Englisch, Deutsch",
     "other":"andere",
     "otherSkill":"Drohne,  Photographie",
-    "overview":"Überblick"
+    "overview":"Überblick",
+    "speaking":"Sprechen",
+    "listening":"Hören",
+    "reading":"Lesen",
+    "writing":"Schreiben"
 }

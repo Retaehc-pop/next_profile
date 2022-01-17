@@ -22,6 +22,9 @@ function ActiveLink({ children, href}){
 }
 
 export const Layout = ({children}) =>{
+    
+    const date = new Date("December 20,2021");
+    const fullYear = date.getFullYear();
     let router = useRouter()
     const [darkTheme, setDarkTheme] = useState(undefined);
     let { t } = useTranslation()
@@ -82,7 +85,7 @@ export const Layout = ({children}) =>{
                     <p className={styles.ico}><FontAwesomeIcon onClick={() => setDarkTheme(!darkTheme)} icon={faAdjust} size='2x'></FontAwesomeIcon></p>
                 </div>
                 <p>Papop Lekhapanyaporn ; Pop ; Retaehc</p>
-                <p>© 2021 Retaehc, All rights reserved</p>
+                <p>© {fullYear} Retaehc, All rights reserved</p>
                 
             </div>
             <div className="contact-icon" style={{display: 'flex',flexDirection: 'row'}}>

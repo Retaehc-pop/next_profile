@@ -21,5 +21,9 @@
     "spokenLanguage":"Thai, English, German",
     "other":"Other",
     "otherSkill":"Drone, Photographing",
-    "overview":"Overview"
+    "overview":"Overview",
+    "speaking":"Speaking",
+    "listening":"Listening",
+    "reading":"Reading",
+    "writing":"Writing"
 }

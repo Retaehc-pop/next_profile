@@ -199,6 +199,35 @@ export default function About () {
 						</li>
 					</ul>
 				</section>
+				<section>
+					<h1>Language Proficiency</h1>
+					<div className={styles.languages}>
+						<div className={styles.language}>
+							<h1>Thai</h1>
+							<p>Native</p>
+							<p>{t('about:speaking')} : Native</p>
+							<p>{t('about:listening')} : Native</p>
+							<p>{t('about:reading')} : Native</p>
+							<p>{t('about:writing')} : Native</p>
+						</div>
+						<div className={styles.language}>
+							<h1>English</h1>
+							<p>C2 : IELST overall 7</p>
+							<p>{t('about:speaking')} : 6.5/9</p>
+							<p>{t('about:listening')} : 8.5/9</p>
+							<p>{t('about:reading')} : 7.5/9</p>
+							<p>{t('about:writing')} : 5.5/9</p>
+						</div>
+						<div className={styles.language}>
+							<h1>German</h1>
+							<p>B1 : Geothe</p>
+							<p>{t('about:speaking')} : B2</p>
+							<p>{t('about:listening')} : B1</p>
+							<p>{t('about:reading')} : B1</p>
+							<p>{t('about:writing')} : B1</p>
+						</div>
+					</div>
+				</section>
 			</main>
 		</Layout>
 	)

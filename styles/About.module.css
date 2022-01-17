@@ -42,8 +42,6 @@
 }
 .schools {
   display: flex;
-  /* justify-content: center; */
-  /* align-items: center; */
   min-height: 80vh;
 }
 .school {
@@ -88,4 +86,40 @@
   z-index: 100;
   color: #eeee;
   text-decoration: none;
+}
+.languages {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2rem;
+  width: 100vw;
+}
+.language {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  background-color: var(--color-primary);
+  color: var(--color-background);
+  border-radius: 25px;
+  min-width: 25vw;
+}
+
+@media screen and (max-width: 1200px) {
+  .schools {
+    display: flex;
+    flex-direction: column;
+  }
+  .school {
+    width: 100vw;
+  }
+  .school img {
+    width: 100vw;
+  }
+}
+@media screen and (max-width: 600px) {
+  .aboutsection {
+    flex-direction: column;
+  }
 }

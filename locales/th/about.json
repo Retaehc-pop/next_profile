@@ -21,6 +21,10 @@
     "spokenLanguage":"ไทย, อังกฤซ, เยอร์มัน",
     "other":"อื่น ๆ ",
     "otherSkill":"บินโดรน,  ถ่ายรูป",
-    "overview":"ภาพรวม"
+    "overview":"ภาพรวม",
+    "speaking":"การพูด",
+    "listening":"ดารฟัง",
+    "reading":"การอ่าน",
+    "writing":"การเขียน"
 
 }
