@@ -7,10 +7,11 @@ import {
     setUserCookie,
     getUserFromCookie,
 } from './userCookies'
-import { mapUserData } from './mapUserData'
+import { userData } from './userData'
 
+initFirebase()
 
-const useUser = () => {
+export const useUser = () => {
     const [user, setUser] = useState()
     const router = useRouter()
     const auth = getAuth()
@@ -19,7 +20,7 @@ const useUser = () => {
         try {
             await auth.signOut();
             removeUserCookie();
-            router.push("/auth");
+            router.push("/login");
         } catch (e) {
             console.log(e.message);
         }
@@ -28,9 +29,9 @@ const useUser = () => {
     useEffect(() => {
         const cancelAuthListener = auth.onIdTokenChanged((user) => {
             if (user) {
-                const userData = mapUserData(user)
-                setUserCookie(userData)
-                setUser(userData)
+                const userDatas = userData(user)
+                setUserCookie(userDatas)
+                setUser(userDatas)
             } else {
                 removeUserCookie()
                 setUser()
@@ -52,4 +53,4 @@ const useUser = () => {
     return { user, logout }
 }
 
-export { useUser }
+// export { useUser }

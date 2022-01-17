@@ -8,7 +8,6 @@ import SearchForm from '../lib/SearchForm'
 import ProjectForm from '../lib/ProjectForm'
 import useTranslation from "next-translate/useTranslation"
 import { Layout } from '../components/layout/layout'
-import useUser from '../firebase/useUser'
 
 // import firebase from "../firebase/initFirebase";
 // firebase()

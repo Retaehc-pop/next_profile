@@ -1,28 +1,31 @@
 import { useEffect, useState } from "react";
 import  StyledFirebaseAuth  from "react-firebaseui/StyledFirebaseAuth";
 import firebase from "firebase/compat/app";
-import 'firebase/auth'
+import {
+    getAuth,GoogleAuthProvider,TwitterAuthProvider,GithubAuthProvider,EmailAuthProvider} from 'firebase/auth'
 import { setUserCookie } from "../../firebase/userCookies"
-import { mapUserData } from "../../firebase/mapuserData"
+import { userData } from "../../firebase/userData"
 import initFirebase from "../../firebase/initFirebase";
+
 initFirebase()
+const auth = getAuth()
 
 const AuthenticationConfig = {
     signInFlow:"pop-up",
-    signInOption:[
+    signInOptions:[
         {
             provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
             requireDisplayName: true,
         },
-        firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-        firebase.auth.GithubAuthProvider.PROVIDER_ID,
+        GoogleAuthProvider.PROVIDER_ID,
+        GithubAuthProvider.PROVIDER_ID,
     ],
     signInSuccessUrl:"/",
-    credentailHelper:"None",
+    credentialHelper:"none",
     callbacks:{
         signInSuccessWithAuthResult: async ({user},redirectUrl) => {
-            const userData = mapUserData(user)
-            setUserCookie(userData)
+            const userDatas = userData(user)
+            setUserCookie(userDatas)
         }
     },
 }
