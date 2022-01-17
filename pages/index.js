@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import { useRouter } from 'next/router'
 import styles from '../styles/Home.module.css'
 import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -9,8 +8,13 @@ import SearchForm from '../lib/SearchForm'
 import ProjectForm from '../lib/ProjectForm'
 import useTranslation from "next-translate/useTranslation"
 import { Layout } from '../components/layout/layout'
+import useUser from '../firebase/useUser'
+
+// import firebase from "../firebase/initFirebase";
+// firebase()
 
 export default function Home() {
+  // const {user, useUser} = useUser()
   let { t } = useTranslation();
   return (
     <div>
@@ -22,12 +26,15 @@ export default function Home() {
       </Head>
       <Layout>
       <main className={styles.main}>
+        
         <section id="home" style={{height:"100vh"}}>
           <img src="/img/BG.JPG" className={styles.bg} />
           <img src="/img/anti.png" className={styles.anti} />
         </section>
         <section id="about">
+          
           <h1>{t("about:title")}</h1>
+          
           <div className={styles.aboutsection}>
             <div>
               <h2>{t("about:name")}</h2>
