@@ -10,17 +10,17 @@ import Link from "next/link";
 //     }
 // }
 export default function Projects() {
-	const projects = {
-		sporos:{
-			name:"SPOROS",
-			role:"programmer"
-		},
-		foodbuster:{
-			name:"foodbuster",
-			role:"AI developer"
-		},
-	}
-    console.log(projects)
+	// const projects = {
+	// 	sporos:{
+	// 		name:"SPOROS",
+	// 		role:"programmer"
+	// 	},
+	// 	foodbuster:{
+	// 		name:"foodbuster",
+	// 		role:"AI developer"
+	// 	},
+	// }
+    // console.log(projects)
 	return (
 		<div>
 			<Layout>

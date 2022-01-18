@@ -5,16 +5,17 @@ import {
     getAuth,GoogleAuthProvider,TwitterAuthProvider,GithubAuthProvider,EmailAuthProvider} from 'firebase/auth'
 import { setUserCookie } from "../../firebase/userCookies"
 import { userData } from "../../firebase/userData"
-import initFirebase from "../../firebase/initFirebase";
+import { initFirebase } from "../../firebase/initFirebase";
 
 initFirebase()
 const auth = getAuth()
+
 
 const AuthenticationConfig = {
     signInFlow:"pop-up",
     signInOptions:[
         {
-            provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
+            provider: EmailAuthProvider.PROVIDER_ID,
             requireDisplayName: true,
         },
         GoogleAuthProvider.PROVIDER_ID,
@@ -31,6 +32,7 @@ const AuthenticationConfig = {
 }
 
 function Authentication () {
+
     const [renderAuth, setRenderAuth] = useState(false)
 
     useEffect(()=>{
@@ -44,7 +46,7 @@ function Authentication () {
             renderAuth ? (
                 <StyledFirebaseAuth 
                 uiConfig={AuthenticationConfig}
-                firebaseAuth={firebase.auth()} />
+                firebaseAuth={auth} />
             ) : null
         }
         </div>)
