@@ -43,6 +43,9 @@ h5 {
   color: var(--color-primary-accent);
   font-weight: 600;
 }
+a:visited {
+  color: var(--color-primary);
+}
 * {
   box-sizing: border-box;
 }

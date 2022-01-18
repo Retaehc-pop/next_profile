@@ -76,6 +76,13 @@
   z-index: 100;
   background-color: var(--color-background);
 }
+.nav a {
+  pointer-events: auto;
+  text-decoration: none;
+}
+.nav a:visited {
+  color: var(--color-primary);
+}
 .aboutcard {
   display: flex;
   flex-direction: column;

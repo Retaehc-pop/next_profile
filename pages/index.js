@@ -4,8 +4,6 @@ import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBirthdayCake, faSearch,faCamera, faCode,faCog, faEnvelope, faGlobeAsia, faGraduationCap, faLanguage, faMapMarkedAlt, faPhone, faUserAstronaut} from '@fortawesome/free-solid-svg-icons'
 
-import SearchForm from '../lib/SearchForm'
-import ProjectForm from '../lib/ProjectForm'
 import useTranslation from "next-translate/useTranslation"
 import { Layout } from '../components/layout/layout'
 
@@ -105,7 +103,6 @@ export default function Home() {
           <h1>{t("projects:title")}</h1>
           <div className={styles.projectsearch}>
             <FontAwesomeIcon icon={faSearch}/>
-            <SearchForm></SearchForm>
             <h3 className={styles.aboutbtn}>{t("common:search")}</h3>
           </div>
         </section>

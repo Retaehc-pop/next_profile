@@ -71,9 +71,9 @@ export const Layout = ({children}) =>{
             <ActiveLink children="Home"  href="/">
                 <img src="/favicon.ico" width={50} height={50}/>
             </ActiveLink>
-            <Link href="/about"><p>{t("about:title")}</p></Link>
-            <Link href="/projects"><p>{t("projects:title")}</p></Link>
-            <Link href="/contact"><p>{t("common:contact")}</p></Link>
+            <p><Link href="/about">{t("about:title")}</Link></p>
+            <p><Link href="/projects">{t("projects:title")}</Link></p>
+            <p><ActiveLink children="contact"  href="/contact">{t("common:contact")}</ActiveLink></p>
             {
                 user ? <p>user</p>:<p>nouser</p>
             }
