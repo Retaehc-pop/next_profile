@@ -1,16 +1,18 @@
 import cookies from 'js-cookie'
 
-export const getUserFromCookies = () => {
-    const cookie = cookies.get("auth")
-    if (!cookie){
+export const getUserFromCookie = () => {
+    const cookie = cookies.get('auth')
+    if (!cookie) {
         return
     }
-    return JSON.parsel(cookie)
+    return JSON.parse(JSON.stringify(cookies))
 }
 
 export const setUserCookie = (user) => {
-    cookies.set('auth',user,{
-        expires: 1/24,
+    cookies.set('auth', user, {
+        // firebase id tokens expire in one hour
+        // set cookie expiry to match
+        expires: 1 / 24,
     })
 }
 

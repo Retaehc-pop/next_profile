@@ -9,8 +9,8 @@ import {
 } from './userCookies'
 import { userData } from './userData'
 
-initFirebase()
 
+initFirebase()
 export const useUser = () => {
     const [user, setUser] = useState()
     const router = useRouter()

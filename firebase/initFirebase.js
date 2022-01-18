@@ -1,9 +1,6 @@
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/auth';
-import 'firebase/compat/firestore';
-import 'firebase/compat/storage';
-import 'firebase/compat/analytics';
-import 'firebase/compat/performance';
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+import { getDatabase } from "@firebase/database";
 
 const clientCredentials = {
     apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -15,16 +12,17 @@ const clientCredentials = {
     measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
 };
 
-export default function initFirebase(){
-    if (!firebase.apps.length){
-        firebase.initializeApp(clientCredentials)
-
-        if (typeof window !== 'undefined'){
-            if ('measurementId' in clientCredentials){
-                firebase.analytics()
-                firebase.performance()
-            }
-        }
-        console.log('firebase init done')
+function initFirebase() {
+    if (typeof window !== undefined) {
+        initializeApp(clientCredentials);
+        console.log("Firebase has been init successfully");
     }
 }
+
+const app = initializeApp(clientCredentials);
+
+const db = getFirestore(app);
+
+const realDB = getDatabase(app);
+
+export { initFirebase, db, realDB };

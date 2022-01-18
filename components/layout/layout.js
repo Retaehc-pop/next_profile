@@ -8,6 +8,7 @@ import Link from 'next/link';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; 
 import { faAdjust, faEnvelope, faLanguage, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { faInstagram, faGithub, faStackOverflow,faDiscord, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { useUser } from '../../firebase/useUser';
 
 function ActiveLink({ children, href}){
 	const router = useRouter()
@@ -22,7 +23,8 @@ function ActiveLink({ children, href}){
 }
 
 export const Layout = ({children}) =>{
-    
+    const { user, logout } = useUser()
+
     const date = new Date("December 20,2021");
     const fullYear = date.getFullYear();
     let router = useRouter()
@@ -69,9 +71,12 @@ export const Layout = ({children}) =>{
             <ActiveLink children="Home"  href="/">
                 <img src="/favicon.ico" width={50} height={50}/>
             </ActiveLink>
-            <Link href="#about"><p>{t("about:title")}</p></Link>
-            <Link href="#projects"><p>{t("projects:title")}</p></Link>
+            <Link href="/about"><p>{t("about:title")}</p></Link>
+            <Link href="/projects"><p>{t("projects:title")}</p></Link>
             <Link href="/contact"><p>{t("common:contact")}</p></Link>
+            {
+                user ? <p>user</p>:<p>nouser</p>
+            }
         </nav>
         {children}
         <footer className={styles.footer}>
