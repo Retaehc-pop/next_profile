@@ -6,16 +6,16 @@
   width: 100vw;
   justify-content: center;
   align-items: center;
-}
-.main section {
-  position: relative;
-  display: flex;
-  padding-top: 2rem;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  width: 100vw;
+  section {
+    position: relative;
+    display: flex;
+    padding-top: 2rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100vw;
+  }
 }
 .aboutcard {
   display: flex;
@@ -51,41 +51,41 @@
   align-items: center;
   width: 25vw;
   min-height: inherit;
-}
-.school img {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 25vw;
-  height: 80vh;
-  object-fit: cover;
-  filter: brightness(50%);
-  opacity: 0.8;
-  z-index: 1;
-}
-.school img:hover,
-.school img:active,
-.school img:focus {
-  filter: brightness(90%);
-  opacity: 1;
-  transition-duration: 1000ms;
-}
-.school h2 {
-  position: relative;
-  display: flex;
-  color: #eeee;
-  font-size: 2rem;
-  z-index: 100;
-  pointer-events: none;
-}
-.school h3,
-.schol a {
-  position: relative;
-  display: flex;
-  z-index: 100;
-  color: #eeee;
-  text-decoration: none;
+  img {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25vw;
+    height: 80vh;
+    object-fit: cover;
+    filter: brightness(50%);
+    opacity: 0.8;
+    z-index: 1;
+    &:hover,
+    &:active,
+    &:focus {
+      filter: brightness(90%);
+      opacity: 1;
+      transition-duration: 1000ms;
+    }
+  }
+  h2 {
+    position: relative;
+    display: flex;
+    color: #eeee;
+    font-size: 2rem;
+    z-index: 100;
+    pointer-events: none;
+  }
+  h3,
+  a {
+    position: relative;
+    display: flex;
+    z-index: 100;
+    color: #eeee;
+    text-decoration: none;
+  }
 }
 .languages {
   display: flex;
@@ -113,9 +113,9 @@
   }
   .school {
     width: 100vw;
-  }
-  .school img {
-    width: 100vw;
+    img {
+      width: 100vw;
+    }
   }
 }
 @media screen and (max-width: 600px) {

@@ -5,17 +5,6 @@
   margin: 0 auto;
   overflow: hidden;
 }
-
-.hex {
-  position: relative;
-  visibility: hidden;
-  outline: 1px solid transparent; /* fix for jagged edges in FF on hover transition */
-}
-.hex::after {
-  content: "";
-  display: block;
-  padding-bottom: 86.602%;
-}
 .hexIn {
   position: absolute;
   width: 96%;
@@ -27,14 +16,14 @@
   -webkit-transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
   -ms-transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
   transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
-}
-.hexIn * {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  visibility: visible;
-  outline: 1px solid transparent;
+  * {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: visible;
+    outline: 1px solid transparent;
+  }
 }
 .hexLink {
   width: 100%;
@@ -45,46 +34,53 @@
   -webkit-transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
   -ms-transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
   transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
+  &:hover h1,
+  &:hover p {
+    visibility: visible;
+    transition-delay: 100ms;
+  }
+  &:hover img {
+    filter: brightness(90%);
+    transition-duration: 1000ms;
+  }
 }
 
 /*** HEX CONTENT **********************************************************************/
-.hex img {
-  left: -100%;
-  right: -100%;
-  width: auto;
-  height: 100%;
-  margin: 0 auto;
-  filter: brightness(50%);
-  opacity: 0.8;
-}
-
-.hex h1,
-.hex p {
-  width: 100%;
-  /* padding: 5%; */
-}
-.hex h1 {
-  bottom: 50%;
-  font-size: 4em;
-  z-index: 1;
-}
-.hex p {
-  top: 50%;
+.hex {
+  position: relative;
   visibility: hidden;
-  /* padding-bottom: 50%; */
-  font-size: 2em;
+  outline: 1px solid transparent; /* fix for jagged edges in FF on hover transition */
+  &::after {
+    content: "";
+    display: block;
+    padding-bottom: 86.602%;
+  }
+  img {
+    left: -100%;
+    right: -100%;
+    width: auto;
+    height: 100%;
+    margin: 0 auto;
+    filter: brightness(50%);
+    opacity: 0.8;
+  }
+  h1 {
+    bottom: 50%;
+    font-size: 4em;
+    z-index: 1;
+    width: 100%;
+  }
+  p {
+    top: 50%;
+    visibility: hidden;
+    /* padding-bottom: 50%; */
+    font-size: 2em;
+    width: 100%;
+  }
 }
 
 /*** HOVER EFFECT  ***/
-.hexLink:hover h1,
-.hexLink:hover p {
-  visibility: visible;
-  transition-delay: 100ms;
-}
-.hexLink:hover img {
-  filter: brightness(90%);
-  transition-duration: 1000ms;
-}
+
 /*** HEXAGON SIZING AND EVEN ROW INDENTATION ***/
 @media (min-width: 1201px) {
   /* <- 5-4  hexagons per row */
@@ -107,10 +103,10 @@
   }
   .hex {
     width: 25%; /* = 100 / 4 */
-  }
-  .hex:nth-child(7n + 5) {
-    /* first hexagon of even rows */
-    margin-left: 12.5%; /* = width of .hex / 2  to indent even rows */
+    &:nth-child(7n + 5) {
+      /* first hexagon of even rows */
+      margin-left: 12.5%; /* = width of .hex / 2  to indent even rows */
+    }
   }
 }
 
@@ -121,10 +117,10 @@
   }
   .hex {
     width: 33.333%; /* = 100 / 3 */
-  }
-  .hex:nth-child(5n + 4) {
-    /* first hexagon of even rows */
-    margin-left: 16.666%; /* = width of .hex / 2  to indent even rows */
+    &:nth-child(5n + 4) {
+      /* first hexagon of even rows */
+      margin-left: 16.666%; /* = width of .hex / 2  to indent even rows */
+    }
   }
 }
 
@@ -135,10 +131,10 @@
   }
   .hex {
     width: 50%; /* = 100 / 3 */
-  }
-  .hex:nth-child(3n + 3) {
-    /* first hexagon of even rows */
-    margin-left: 25%; /* = width of .hex / 2  to indent even rows */
+    &:nth-child(3n + 3) {
+      /* first hexagon of even rows */
+      margin-left: 25%; /* = width of .hex / 2  to indent even rows */
+    }
   }
 }
 

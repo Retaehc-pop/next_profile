@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Home.module.scss'
 import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBirthdayCake, faSearch,faCamera, faCode,faCog, faEnvelope, faGlobeAsia, faGraduationCap, faLanguage, faMapMarkedAlt, faPhone, faUserAstronaut} from '@fortawesome/free-solid-svg-icons'
@@ -25,7 +25,7 @@ export default function Home() {
       <main className={styles.main}>
         
         <section id="home" style={{height:"100vh"}}>
-          <img src="/img/BG.JPG" className={styles.bg} />
+          <img src="/img/BG.JPG" className={styles.bg} id='#bg'/>
           <img src="/img/anti.png" className={styles.anti} />
         </section>
         <section id="about">

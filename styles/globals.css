@@ -43,6 +43,7 @@ h5 {
   color: var(--color-primary-accent);
   font-weight: 600;
 }
+a,
 a:visited {
   color: var(--color-primary);
 }

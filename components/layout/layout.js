@@ -1,6 +1,6 @@
 
 import { useRouter } from 'next/router'
-import styles from '../../styles/Home.module.css'
+import styles from '../../styles/Home.module.scss'
 import useTranslation from "next-translate/useTranslation"
 import { useState, useEffect } from 'react'
 import Link from 'next/link';

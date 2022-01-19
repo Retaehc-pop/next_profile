@@ -1,5 +1,5 @@
-import styles from "../styles/About.module.css"
-import hexstyles from "../styles/hexagonal.module.css"
+import styles from "../styles/About.module.scss"
+import hexstyles from "../styles/hexagonal.module.scss"
 import { Layout } from "../components/layout/layout"
 import useTranslation from "next-translate/useTranslation"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'

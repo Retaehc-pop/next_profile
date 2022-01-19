@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Layout } from "../components/layout/layout";
-import styles from '../styles/Admin.module.css'
+import styles from '../styles/Admin.module.scss'
 export default function NotFound(){
     return (
         <Layout>

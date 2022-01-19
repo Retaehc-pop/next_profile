@@ -1,0 +1,37 @@
+.main {
+  min-height: 77vh;
+  padding: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  section {
+    position: relative;
+    display: flex;
+    padding-top: 2rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 50vw;
+    border-radius: 25px;
+    color: var(--color-primary);
+    background-color: var(--color-background);
+  }
+}
+.row {
+  padding: 0rem 3rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  input {
+    font-size: 1.7rem;
+    font-family: "Quicksand", "Prompt", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}

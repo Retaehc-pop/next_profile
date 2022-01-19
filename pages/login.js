@@ -1,7 +1,7 @@
 import { Layout } from "../components/layout/layout";
 import Authentication from "../components/auth/Authentication";
 import  Link  from "next/link"
-import styles from "../styles/Login.module.css"
+import styles from "../styles/Login.module.scss"
 const Login = () =>{
     return (
         <div>
