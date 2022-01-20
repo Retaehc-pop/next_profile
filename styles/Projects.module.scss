@@ -15,6 +15,22 @@
     height: 100%;
     width: 100vw;
   }
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  input {
+    height: 4rem;
+    width: 50vw;
+  }
+  button {
+    height: 4rem;
+    width: 4rem;
+    background-color: var(--color-background);
+    color: var(--color-primary);
+    border: 0;
+  }
 }
 .cards {
   position: relative;
@@ -26,6 +42,10 @@
   width: 100vw;
   color: var(--color-background);
   div {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: var(--color-primary);
     border-radius: 25px;
     min-width: 70vw;

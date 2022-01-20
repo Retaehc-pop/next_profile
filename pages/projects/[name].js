@@ -1,8 +1,10 @@
 import { Layout } from "../../components/layout/layout";
 import { collection, query, where, doc, getDoc, getDocs } from "firebase/firestore"; 
+import { getStorage, ref, listAll, getDownloadURL} from "firebase/storage"; 
 import { db } from '../../firebase/initFirebase'
 import { useRouter } from 'next/router'
 
+const storage = getStorage();
 export const getStaticPaths = async () => {
 	const allProject = [];
 	const q = query(collection(db,"projects"))
