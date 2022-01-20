@@ -1,15 +1,44 @@
 .main {
-  position: relative;
   display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  width: 100vw;
   justify-content: center;
   align-items: center;
-  min-height: 70vh;
-
   section {
-    height: 100vh;
+    position: relative;
+    display: flex;
+    padding-top: 2rem;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    display: flex;
-    flex-direction: column;
+    height: 100%;
+    width: 100vw;
+  }
+}
+.cards {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100vw;
+  color: var(--color-background);
+  div {
+    background-color: var(--color-primary);
+    border-radius: 25px;
+    min-width: 70vw;
+    padding: 0.5rem;
+    margin: 1rem;
+    pointer-events: none;
+  }
+  h1 {
+    color: var(--color-background);
+    font-size: 2rem;
+  }
+  a {
+    text-decoration: none;
+    color: var(--color-background);
   }
 }

@@ -26,10 +26,15 @@ export default function Projects({ projects }) {
 				<main className={styles.main}>
 					<section>
 						<h1> Projects </h1>
-						<div>
+						<div className={styles.cards}>
 							{
 								projects.map(project=>(
-									<h1 key={project.title}><Link href="/projects/[name]" as={`/projects/${project.title}`}>{project.title}</Link></h1>
+									<Link key={project.title} href="/projects/[name]" as={`/projects/${project.title}`}>
+										<div>
+											<h1>{project.title}</h1>
+											<h3>tags: {project.tag}</h3>
+										</div>
+									</Link>
 								))
 							}
 						</div>
