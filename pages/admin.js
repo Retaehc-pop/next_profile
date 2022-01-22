@@ -5,7 +5,7 @@ import { doc, setDoc,updateDoc , Timestamp, GeoPoint } from "firebase/firestore"
 import Link from "next/link";
 import { Layout } from "../components/layout/layout";
 import styles from '../styles/Admin.module.scss';
-import { getStorage, ref, uploadBytesResumable } from "firebase/storage";
+import { getStorage, ref, uploadBytesResumable, getDownloadURL,arrayUnion } from "firebase/storage";
 
 const storage = getStorage();
 
@@ -25,7 +25,6 @@ export default function Admin() {
             (alert('saving project', projectname));
         } catch (error) {
             console.log(error);
-            // alert(error);
         }
     };
     async function uploadImageAsPromise(path, imageFile) {
@@ -40,10 +39,9 @@ export default function Admin() {
                     reject(error);
                 },
                 async function complete() {
-                    // The getDownloadURL returns a promise and it is resolved to get the image url.
-                    // const imageURL = await task.snapshot.ref.getDownloadURL();
-                    // resolve(imageURL);
-                    // alert("complete")
+                    getDownloadURL(ref(storage,path + imageFile.name)).then((url)=>{
+                        resolve(url)
+                    })
                 });
         });
     }
@@ -51,10 +49,9 @@ export default function Admin() {
     useEffect(() => {
         setTimeout(() => {
             document.getElementById('photos').addEventListener('change', function (e) {
-                // console.log(e.target.files);
+                files = []
                 for (const file in e.target.files) {
                     files.push(e.target.files[file]);
-                    console.log(e.target.files[file])
                 }
             });
         }, 1000);
@@ -67,41 +64,27 @@ export default function Admin() {
         var organisation = document.getElementById("organisation").value;
         var source = document.getElementById("source").value;
         var tags = document.getElementById("tags").value;
+        var coverimg = inputEl.current.files[0];
         if (title === ""){
             alert('Please input title')
             return 
         }
-
         if (title !== "")data["title"] = title
         if (role !== "")data["role"] = role
         if (description !== "")data["description"] = description
         if (organisation !== "")data["organisation"] = organisation.split(",")
         if (source !== "")data["sourceCode"] = source
         if (tags !== "")data["tag"] = tags.split(",")
-
+        const cov = [uploadImageAsPromise("projects/" + title + "/", coverimg)]
+        Promise.all(cov).then((fileURL) => {
+            data['cover'] = fileURL
+        })
         const promises = files.map(file => uploadImageAsPromise("projects/" + title + "/", file));
         Promise.all(promises).then((fileURLS) => {
-            //Once all the promises are resolved, you will get the urls in a array.
-            console.log(fileURLS);
-        });
-
-        uploadData(title, data);
-
-        var file = inputEl.current.files[0];
-        if (file) {
-            const storageRef = ref(storage, "projects/" + title + "/" + file.name);
-            const task = uploadBytesResumable(storageRef, file);
-            task.on('state_change',
-                function progress(snapshot) {
-                    setVal((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
-                },
-                function error(err) {
-                    alert(error);
-                },
-                function complete() {
-                    alert('upload complete');
-                });
-        }
+            data["imgs"] = fileURLS
+            uploadData(title, data);
+        })
+        
     }
 
     if (user) {

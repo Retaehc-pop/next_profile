@@ -1,0 +1,25 @@
+.main {
+  padding-top: 5rem;
+  min-height: 70vh;
+  width: max-content;
+  section {
+    width: fit-content;
+    height: auto;
+    display: flex;
+    // justify-content: space-between;
+    align-items: center;
+  }
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 50vw;
+    height: auto;
+  }
+  img {
+    min-width: 50vw;
+    justify-content: right;
+    object-fit: cover;
+  }
+}

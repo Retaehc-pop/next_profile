@@ -3,9 +3,9 @@
 
 :root {
   --color-primary-accent: #525252;
+  --color-secondary-accent: #358ef1;
   --color-primary: rgb(48, 54, 90);
   --color-background: #eeee;
-  --color-secondary-accent: #358ef1;
 }
 [data-theme="dark"] {
   --color-primary-accent: #817bd4;
