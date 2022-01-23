@@ -3,13 +3,13 @@
 
 :root {
   --color-primary-accent: #525252;
-  --color-secondary-accent: #358ef1;
+  --color-secondary-accent: #8da7c7;
   --color-primary: rgb(48, 54, 90);
   --color-background: #eeee;
 }
 [data-theme="dark"] {
   --color-primary-accent: #817bd4;
-  --color-secondary-accent: #61dafb;
+  --color-secondary-accent: #3c7d8f;
   --color-primary: #eeee;
   --color-background: rgb(24, 25, 34);
 }
