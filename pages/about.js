@@ -48,7 +48,7 @@ export default function About () {
 							<h5>{t("about:location")}</h5>
 						</div>
 						<div className={styles.aboutcard} >
-							<p href="#education"><FontAwesomeIcon icon={faGraduationCap}/> {t("about:education")}</p>
+							<p><FontAwesomeIcon icon={faGraduationCap}/> {t("about:education")}</p>
 							<h5>{t("about:school")}</h5>
 						</div>
 					</div>
@@ -116,6 +116,7 @@ export default function About () {
 						</div>
 					</div>
 				</section>
+				
 				<section id="organisation">
 					<h1>{t("about:organisation")}</h1>
 					<div className={styles.organisation}>
@@ -136,6 +137,7 @@ export default function About () {
 						</div>
 					</div>
 				</section>
+
 				<section id="programming">
 				<h1>{t("about:programming")}</h1>
 					<ul className={hexstyles.hexGrid}>

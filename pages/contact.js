@@ -1,5 +1,5 @@
 import { Layout } from "../components/layout/layout";
-
+import styles from "../styles/Contact.moodule.scss"
 export default function Contact(){
     return (
         <div>
