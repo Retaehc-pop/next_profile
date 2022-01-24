@@ -1,0 +1,31 @@
+.main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  padding: 10rem;
+  section {
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  div {
+    padding: 3rem;
+    border: 5px;
+    border-color: var(--color-primary);
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  @media screen and (max-width: 1200px) {
+    section {
+      flex-direction: column;
+    }
+  }
+}

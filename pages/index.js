@@ -7,11 +7,7 @@ import { faBirthdayCake, faSearch,faCamera, faCode,faCog, faEnvelope, faGlobeAsi
 import useTranslation from "next-translate/useTranslation"
 import { Layout } from '../components/layout/layout'
 
-// import firebase from "../firebase/initFirebase";
-// firebase()
-
 export default function Home() {
-  // const {user, useUser} = useUser()
   let { t } = useTranslation();
   return (
     <div>

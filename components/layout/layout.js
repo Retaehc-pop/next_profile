@@ -75,7 +75,7 @@ export const Layout = ({children}) =>{
 			<p><Link href="/projects">{t("projects:title")}</Link></p>
 			<p><ActiveLink children="contact"  href="/contact">{t("common:contact")}</ActiveLink></p>
 			{
-				user ? <p>user</p>:<p>nouser</p>
+				user ? <p>user</p>:<p><Link href="/login">Login</Link></p>
 			}
 		</nav>
 		{children}

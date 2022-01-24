@@ -3,6 +3,7 @@ import { collection, query, where, doc, getDoc, getDocs } from "firebase/firesto
 import { getStorage, ref, listAll, getDownloadURL } from "firebase/storage";
 import { db } from '../../firebase/initFirebase'
 import { useRouter } from 'next/router'
+import Head from "next/head";
 import styles from '../../styles/project.module.scss'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
@@ -42,31 +43,39 @@ export const getStaticProps = async (context) => {
 export default function Project({ project }) {
   console.log(project)
   return (
-    <Layout>
-      <main className={styles.main}>
-        <section>
-          <img src={project.cover} />
-        </section>
-        <section>
-          <h1> {project.title} <a href={project.sourceCode}><FontAwesomeIcon icon={faGithub}></FontAwesomeIcon></a></h1>
-          <h2> {project.subtitle} || As : {project.role}</h2>
-          <p>{project.description}</p>
-          <h2>  {} </h2>
-          <div>
-            <h2>Tag :</h2>
-            {
-              project.organisation.map(organisation=>(
-                <h3 key={organisation}>{organisation}</h3>
-              ))
-            }
-            {
-              project.tag.map(tag=>(
-                <h3 key={tag}>{tag}</h3>
-              ))
-            }
-          </div>
-        </section>
-      </main>
-    </Layout>
+    <div>
+			<Head>
+        <title>Papop: { project.title }</title>
+        <meta name="description" content="Project pages" />
+        <meta charSet="UTF-8"></meta>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <Layout>
+        <main className={styles.main}>
+          <section>
+            <img src={project.cover} />
+          </section>
+          <section>
+            <h1> {project.title} <a href={project.sourceCode}><FontAwesomeIcon icon={faGithub}></FontAwesomeIcon></a></h1>
+            <h2> {project.subtitle} || As : {project.role}</h2>
+            <p>{project.description}</p>
+            <h2>  {} </h2>
+            <div>
+              <h2>Tag :</h2>
+              {
+                project.organisation.map(organisation=>(
+                  <h3 key={organisation}>{organisation}</h3>
+                ))
+              }
+              {
+                project.tag.map(tag=>(
+                  <h3 key={tag}>{tag}</h3>
+                ))
+              }
+            </div>
+          </section>
+        </main>
+      </Layout>
+    </div>
   );
 }

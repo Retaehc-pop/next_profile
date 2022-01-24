@@ -2,18 +2,17 @@ import { Layout } from "../../components/layout/layout";
 import Link from "next/link";
 import styles from "../../styles/Projects.module.scss"
 import Image from "next/image"
+import Head from "next/head";
 
 import { useRouter } from 'next/router';
 import { useState } from 'react'
 
 import { db } from '../../firebase/initFirebase'
 import { collection, query, where, doc, getDoc, getDocs } from "firebase/firestore"
-import { getDownloadURL, getStorage, ref } from "firebase/storage";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFilter, faSearch, faSort, faSortAlphaDownAlt, faSortAlphaDown, faRandom} from '@fortawesome/free-solid-svg-icons';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
-const storage = getStorage();
 export const getStaticProps = async () => {
 	const allProject = [];
 	const q = query(collection(db,"projects"))
@@ -33,6 +32,12 @@ export default function Projects({ projects }) {
 
 	return (
 		<div>
+			 <Head>
+        <title>Papop: projects</title>
+        <meta name="description" content="Project pages" />
+        <meta charSet="UTF-8"></meta>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
 			<Layout>
 				<main className={styles.main}>
 					<section>
@@ -57,9 +62,7 @@ export default function Projects({ projects }) {
 						))
 					}
 					</div>
-						
 			</Layout>
-
 		</div>
 	)
 }

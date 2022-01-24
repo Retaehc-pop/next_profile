@@ -1,4 +1,5 @@
 import styles from "../styles/About.module.scss"
+import Head from "next/head"
 import hexstyles from "../styles/hexagonal.module.scss"
 import { Layout } from "../components/layout/layout"
 import useTranslation from "next-translate/useTranslation"
@@ -11,6 +12,13 @@ import Link from "next/link"
 export default function About () {
 	let {t} = useTranslation();
 	return (
+		<div>
+		<Head>
+        <title>Papop: About</title>
+        <meta name="description" content="Papop Lekhapanyaporn's Website" />
+        <meta charSet="UTF-8"></meta>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
 		<Layout>
 			<main className={styles.main}>
 			<section className={styles.profile}>
@@ -251,5 +259,6 @@ export default function About () {
 				</section>
 			</main>
 		</Layout>
+		</div>
 	)
 }
