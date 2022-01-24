@@ -7,7 +7,8 @@ import Head from "next/head";
 import styles from '../../styles/project.module.scss'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-const storage = getStorage();
+
+
 export const getStaticPaths = async () => {
   const allProject = [];
   const q = query(collection(db, "projects"))
@@ -41,7 +42,6 @@ export const getStaticProps = async (context) => {
 }
 
 export default function Project({ project }) {
-  console.log(project)
   return (
     <div>
 			<Head>
@@ -59,7 +59,6 @@ export default function Project({ project }) {
             <h1> {project.title} <a href={project.sourceCode}><FontAwesomeIcon icon={faGithub}></FontAwesomeIcon></a></h1>
             <h2> {project.subtitle} || As : {project.role}</h2>
             <p>{project.description}</p>
-            <h2>  {} </h2>
             <div>
               <h2>Tag :</h2>
               {

@@ -17,6 +17,15 @@
     color: var(--color-primary);
     background-color: var(--color-background);
   }
+  input {
+    font-size: 1.5rem;
+    padding: 1rem;
+    margin: 1rem;
+  }
+  textarea {
+    font-size: 1.5rem;
+    width: 100%;
+  }
 }
 .row {
   padding: 0rem 3rem;
