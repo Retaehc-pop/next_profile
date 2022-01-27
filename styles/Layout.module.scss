@@ -1,0 +1,37 @@
+.nav {
+  position: fixed;
+  display: flex;
+  padding: 0.5rem 2rem;
+  width: 100%;
+  justify-content: space-around;
+  z-index: 100;
+  background-color: var(--color-background);
+  a {
+    pointer-events: auto;
+    text-decoration: none;
+  }
+  a:visited {
+    color: var(--color-primary);
+  }
+}
+.footer {
+  display: flex;
+  padding: 2rem;
+  border-top: 1px solid var(--color-primary);
+  justify-content: space-around;
+  align-items: center;
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    text-decoration: none;
+  }
+  p {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    margin: 0%;
+  }
+}

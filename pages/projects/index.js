@@ -1,7 +1,6 @@
 import { Layout } from "../../components/layout/layout";
 import Link from "next/link";
 import styles from "../../styles/Projects.module.scss"
-import Image from "next/image"
 import Head from "next/head";
 
 import { useRouter } from 'next/router';
@@ -17,7 +16,6 @@ export const getStaticProps = async () => {
 	const allProject = [];
 	const q = query(collection(db,"projects"))
 	const querySnapshot = await getDocs(q);
-	console.log(querySnapshot);
 	querySnapshot.forEach((doc)=>{
 	allProject.push(doc.data());
 	})

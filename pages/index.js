@@ -3,12 +3,30 @@ import styles from '../styles/Home.module.scss'
 import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBirthdayCake, faSearch,faCamera, faCode,faCog, faEnvelope, faGlobeAsia, faGraduationCap, faLanguage, faMapMarkedAlt, faPhone, faUserAstronaut} from '@fortawesome/free-solid-svg-icons'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+
+import { db } from '../firebase/initFirebase'
+import { collection, query, where, doc, getDoc, getDocs } from "firebase/firestore"
 
 import useTranslation from "next-translate/useTranslation"
 import { Layout } from '../components/layout/layout'
 
-export default function Home() {
+export const getStaticProps = async () => {
+	const allProject = [];
+	const q = query(collection(db,"projects"))
+	const querySnapshot = await getDocs(q);
+	querySnapshot.forEach((doc)=>{
+	allProject.push(doc.data());
+	})
+	return {
+		props: {projects:allProject}
+	}
+}
+
+export default function Home({ projects }) {
   let { t } = useTranslation();
+  console.log(projects)
   return (
     <div>
       <Head>
@@ -24,10 +42,9 @@ export default function Home() {
           <img src="/img/BG.JPG" className={styles.bg} id='#bg'/>
           <img src="/img/anti.png" className={styles.anti} />
         </section>
+
         <section id="about">
-          
           <h1>{t("about:title")}</h1>
-          
           <div className={styles.aboutsection}>
             <div>
               <h2>{t("about:name")}</h2>
@@ -100,6 +117,22 @@ export default function Home() {
           <div className={styles.projectsearch}>
             <FontAwesomeIcon icon={faSearch}/>
             <h3 className={styles.aboutbtn}>{t("common:search")}</h3>
+          </div>
+          <div>
+            <Swiper
+                spaceBetween={50}
+                slidesPerView={3}
+                onSlideChange={() => console.log('slide change')}
+                onSwiper={(swiper) => console.log(swiper)}
+              >
+              {
+              projects.map(project=>(
+                <SwiperSlide key={project.title}>
+                    <img src={project.cover} placeholder='blur'/>
+                </SwiperSlide>
+              ))
+              }
+            </Swiper>
           </div>
         </section>
       </main>

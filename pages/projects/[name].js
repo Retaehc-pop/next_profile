@@ -4,9 +4,15 @@ import { getStorage, ref, listAll, getDownloadURL } from "firebase/storage";
 import { db } from '../../firebase/initFirebase'
 import { useRouter } from 'next/router'
 import Head from "next/head";
+import { useEffect, useState } from "react";
 import styles from '../../styles/project.module.scss'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import AwesomeSlider from 'react-awesome-slider';
+import withAutoplay from 'react-awesome-slider/dist/autoplay';
+// import AutoplaySlider from 'react-awesome-slider/src/hoc/autoplay';
+import 'react-awesome-slider/dist/styles.css';
+
 
 
 export const getStaticPaths = async () => {
@@ -42,6 +48,12 @@ export const getStaticProps = async (context) => {
 }
 
 export default function Project({ project }) {
+  const AutoplaySlider = withAutoplay(AwesomeSlider)
+  const [images,setImages] = useState([])
+  useEffect(() => {
+    setImages(project.imgs)
+    images.push(project.cover)
+	}, []);
   return (
     <div>
 			<Head>
@@ -53,7 +65,13 @@ export default function Project({ project }) {
       <Layout>
         <main className={styles.main}>
           <section>
-            <img src={project.cover} />
+            <AutoplaySlider play={true} interval={2000} bullets={false} cancelOnInteraction={false}>
+              {
+                images.map(img=>(
+                  <div key={img} data-src={img}/>
+                ))
+              }
+            </AutoplaySlider>
           </section>
           <section>
             <h1> {project.title} <a href={project.sourceCode}><FontAwesomeIcon icon={faGithub}></FontAwesomeIcon></a></h1>
