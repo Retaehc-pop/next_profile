@@ -8,9 +8,9 @@ import { useEffect, useState } from "react";
 import styles from '../../styles/project.module.scss'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
+
 import AwesomeSlider from 'react-awesome-slider';
 import withAutoplay from 'react-awesome-slider/dist/autoplay';
-// import AutoplaySlider from 'react-awesome-slider/src/hoc/autoplay';
 import 'react-awesome-slider/dist/styles.css';
 
 

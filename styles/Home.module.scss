@@ -16,90 +16,72 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100%;
     width: 100vw;
   }
 }
-.bg {
-  position: absolute;
-  height: 100vh;
-  width: 100vw;
-  filter: blur(0.5rem);
-  -webkit-filter: blur(0.5rem);
-}
-.anti {
-  height: 50vmin;
-  z-index: 10;
-}
-
-.ico {
-  padding: 1rem;
-  border-radius: 50%;
-  &:hover,
-  &:active {
-    border-radius: 50%;
-    transform: rotate(360deg);
-    transition-duration: 1000ms;
-  }
-}
-
-.aboutsection {
+.startup {
+  position: relative;
   display: flex;
-  flex-direction: row;
-  padding: 2rem;
-  justify-content: space-evenly;
-  height: 100%;
-  width: 100%;
-}
-.aboutcard {
-  display: flex;
+  padding-top: 2rem;
   flex-direction: column;
   justify-content: center;
-  align-items: left;
-  padding: 0.25rem;
-}
-.aboutbtn {
-  background-color: var(--color-primary);
-  color: var(--color-background);
-  padding: 0.5rem 1.5rem;
-}
-.aboutbtn:hover {
-  transform: scale(1.2);
-  transition-duration: 500ms;
-}
-.projectsearch {
-  display: flex;
-  flex-direction: row;
-  justify-items: center;
   align-items: center;
+  height: 100vh;
+  width: 100vw;
 }
-.searchbox {
-  width: 50vw;
-  font-family: "Quicksand";
-  font-weight: 700;
-  font-size: 1.5rem;
-  font-style: normal;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  border: none;
+
+.about {
+  section {
+    display: flex;
+    flex-direction: row;
+    padding: 2rem;
+    justify-content: space-evenly;
+    height: 100%;
+    width: 100%;
+  }
+  span {
+    padding: 0.25rem;
+  }
+  a {
+    background-color: var(--color-primary);
+    color: var(--color-background);
+    padding: 0.5rem 1.5rem;
+    &:hover {
+      transform: scale(1.2);
+      transition-duration: 500ms;
+    }
+  }
 }
-.searchbox:focus,
-.searchbox:hover,
-.searchbox:active {
-  border: none;
+.projects {
+  padding: 5rem 0rem;
+  width: 100vw;
+  section {
+    width: 60vw;
+  }
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  img {
+    filter: brightness(0.6);
+    -webkit-filter: brightness(0.6);
+  }
+  h2 {
+    z-index: 10000;
+    background-color: var(--color-primary);
+    color: var(--color-background);
+    border-radius: 25px;
+    padding: 1rem;
+    bottom: 30px;
+  }
+  a {
+    background-color: var(--color-primary);
+    color: var(--color-background);
+    text-decoration: none;
+  }
 }
 @media screen and (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
-  }
-  .footer {
-    flex-direction: column;
-  }
-  .footer .contact-copyright p {
-    text-align: center;
-    margin-left: 0px;
-  }
   .aboutsection {
     flex-direction: column;
   }

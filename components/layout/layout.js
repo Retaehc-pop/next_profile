@@ -74,61 +74,51 @@ export const Layout = ({children}) =>{
 			<p><Link href="/about">{t("about:title")}</Link></p>
 			<p><Link href="/projects">{t("projects:title")}</Link></p>
 			<p><ActiveLink children="contact"  href="/contact">{t("common:contact")}</ActiveLink></p>
-			{
-				user ? <p>user</p>:<p><Link href="/login">Login</Link></p>
-			}
+			<p><Link href={router.asPath} locale={router.locales[(router.locales.indexOf(router.locale)+1)%router.locales.length]}><FontAwesomeIcon icon={faLanguage} size='2x'/></Link></p>
+			<p className={styles.ico}><FontAwesomeIcon onClick={() => setDarkTheme(!darkTheme)} icon={faAdjust} size='2x'></FontAwesomeIcon></p>
 		</nav>
 		{children}
 		<footer className={styles.footer}>
-			<div className="contact-copyright">
-				<div style={{display: 'flex',flexDirection: 'row'}}>
-					<Link href={router.asPath} locale={router.locales[(router.locales.indexOf(router.locale)+1)%router.locales.length]}>
-						<p>
-						<FontAwesomeIcon icon={faLanguage} size='2x'/>
-						</p>
-					</Link>
-					<p className={styles.ico}><FontAwesomeIcon onClick={() => setDarkTheme(!darkTheme)} icon={faAdjust} size='2x'></FontAwesomeIcon></p>
-				</div>
+			<section>
 				<p>Papop Lekhapanyaporn ; Pop ; Retaehc</p>
 				<p>© {fullYear} Retaehc, All rights reserved</p>
-				
-			</div>
-			<div className="contact-icon" style={{display: 'flex',flexDirection: 'row'}}>
-				<Link href="mailto:papop2003@gmail.com">
-					<h3  className={styles.ico}>
-						<FontAwesomeIcon icon={faEnvelope} size='2x'></FontAwesomeIcon>
-					</h3>
-				</Link>
-				<Link href="https://www.instagram.com/pop.pxp/" >
-					<h3 className={styles.ico}>
-						<FontAwesomeIcon icon={faInstagram} size='2x'></FontAwesomeIcon>
-					</h3>
-				</Link>
-				<Link href="https://github.com/Retaehc-pop">
-				<h3  aria-hidden="true" className={styles.ico}>
-					<FontAwesomeIcon icon={faGithub} size='2x'></FontAwesomeIcon>
-				</h3>
-				</Link>
-				<Link href="tel:+66898118068">
-				<h3 aria-hidden="true" className={styles.ico}>
-					<FontAwesomeIcon icon={faPhone} size='2x' ></FontAwesomeIcon>
-				</h3>
-				</Link>
-				<Link href="https://stackoverflow.com/users/14537225/papop-lekhapanyaporn">
-					<h3 className={styles.ico}>
-						<FontAwesomeIcon icon={faStackOverflow} size='2x'></FontAwesomeIcon>
-					</h3>
-				</Link>
-				<Link href="https://www.linkedin.com/in/papop-lekhapanyaporn-2386b5229/">
+			</section>
+			<div>
 				<h3  className={styles.ico}>
-					<FontAwesomeIcon icon={faLinkedin} size='2x'></FontAwesomeIcon>
+					<Link href="mailto:papop2003@gmail.com">
+							<FontAwesomeIcon icon={faEnvelope} size='2x'></FontAwesomeIcon>
+					</Link>
 				</h3>
-				</Link>
-				<Link href="https://discordapp.com/users/267572826418970624">
 				<h3 className={styles.ico}>
-					<FontAwesomeIcon icon={faDiscord} size='2x'></FontAwesomeIcon>
+					<Link href="https://www.instagram.com/pop.pxp/" >
+							<FontAwesomeIcon icon={faInstagram} size='2x'></FontAwesomeIcon>
+					</Link>
 				</h3>
-				</Link>
+				<h3  aria-hidden="true" className={styles.ico}>
+					<Link href="https://github.com/Retaehc-pop">
+						<FontAwesomeIcon icon={faGithub} size='2x'></FontAwesomeIcon>
+					</Link>
+				</h3>
+				<h3 aria-hidden="true" className={styles.ico}>
+					<Link href="tel:+66898118068">
+						<FontAwesomeIcon icon={faPhone} size='2x' ></FontAwesomeIcon>
+					</Link>
+				</h3>
+				<h3 className={styles.ico}>
+					<Link href="https://stackoverflow.com/users/14537225/papop-lekhapanyaporn">
+							<FontAwesomeIcon icon={faStackOverflow} size='2x'></FontAwesomeIcon>
+					</Link>
+				</h3>
+				<h3  className={styles.ico}>
+					<Link href="https://www.linkedin.com/in/papop-lekhapanyaporn-2386b5229/">
+						<FontAwesomeIcon icon={faLinkedin} size='2x'></FontAwesomeIcon>
+					</Link>
+				</h3>
+				<h3 className={styles.ico}>
+					<Link href="https://discordapp.com/users/267572826418970624">
+						<FontAwesomeIcon icon={faDiscord} size='2x'></FontAwesomeIcon>
+					</Link>
+				</h3>
 			</div>
 		</footer>
 	  </div>
