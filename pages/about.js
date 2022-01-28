@@ -99,28 +99,28 @@ export default function About () {
 					<h1>{t("about:education")}</h1>
 					<div className={styles.schools}>
 						<div>
-							<img src="/img/BG.JPG"/>
+							<img src="https://firebasestorage.googleapis.com/v0/b/profile-retaehc.appspot.com/o/IMG%20Files%2FACP.jpg?alt=media&token=18be4a67-4d6c-44cb-a60c-130d6ec05911"/>
 							<h2><FontAwesomeIcon icon={faShapes}/></h2>
 							<h2>Primary school</h2>
-							<Link href="https://www.acp.ac.th/"><h3>Assumption College Primary School, Bangkok</h3></Link>
+							<h3><Link href="https://www.acp.ac.th/">Assumption College Primary School, Bangkok</Link></h3>
 						</div>
 						<div>
-							<img src="/img/BG.JPG"/>
+							<img src="https://firebasestorage.googleapis.com/v0/b/profile-retaehc.appspot.com/o/IMG%20Files%2FAssumption_College.jpg?alt=media&token=3357e434-b61b-42ff-8567-02f25b0f2151"/>
 							<h2><FontAwesomeIcon icon={faSchool}/></h2>
 							<h2>Secondary school</h2>
-							<Link href="https://www.assumption.ac.th/"><h3>Assumption College, Bangkok</h3></Link>
+							<h3><Link href="https://www.assumption.ac.th/">Assumption College, Bangkok</Link></h3>
 						</div>
 						<div>
-							<img src="/img/BG.JPG"/>
+							<img src="https://firebasestorage.googleapis.com/v0/b/profile-retaehc.appspot.com/o/IMG%20Files%2Fkatolische%20marienschule.jpg?alt=media&token=b779acfa-c7cc-4546-bcc1-02e39f109edd"/>
 							<h2><FontAwesomeIcon icon={faPlane}/></h2>
 							<h2>Exchange year</h2>
-							<Link href="https://marienschule-potsdam.de/" ><h3>Katholishe Marienschule potsdam,Germany</h3></Link>
+							<h3><Link href="https://marienschule-potsdam.de/" >Katholishe Marienschule potsdam,Germany</Link></h3>
 						</div>
 						<div>
-							<img src="/img/BG.JPG"/>
+							<img src="https://firebasestorage.googleapis.com/v0/b/profile-retaehc.appspot.com/o/IMG%20Files%2FAssumption_College.jpg?alt=media&token=3357e434-b61b-42ff-8567-02f25b0f2151"/>
 							<h2><FontAwesomeIcon icon={faUserGraduate}/></h2>
 							<h2>high school</h2>
-							<Link href="https://www.assumption.ac.th/"><h3>Assumption College, Bangkok</h3></Link>
+							<h3><Link href="https://www.assumption.ac.th/">Assumption College, Bangkok</Link></h3>
 						</div>
 					</div>
 				</section>

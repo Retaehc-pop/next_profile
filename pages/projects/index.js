@@ -40,13 +40,16 @@ export default function Projects({ projects }) {
 				<main className={styles.main}>
 					<section>
 						<h1> Projects </h1>
-						<div>							
+						{/* <div>							
 							<input onChange={()=>{}}/>
 							<button onClick={()=>{}} className="{drop}"><h2><FontAwesomeIcon icon={faSearch}/></h2></button>
-							</div>
+							</div> */}
 							
 					</section>
 				</main>
+				{/* <div className={styles.filter}>
+
+				</div> */}
 				<div className={styles.cards}>
 					{
 						projects.map(project=>(
