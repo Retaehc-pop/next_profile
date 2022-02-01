@@ -7,7 +7,6 @@ import Head from 'next/head';
 import { Layout } from "../components/layout/layout";
 import styles from '../styles/Admin.module.scss';
 import { getStorage, ref, uploadBytesResumable, getDownloadURL,arrayUnion } from "firebase/storage";
-import { FirebaseError } from 'firebase/app';
 
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
@@ -46,11 +45,24 @@ function TabPanel(props) {
 
 export default function Admin() {
 	// let files = [];
+	
+	const Cover = useRef(null);
 	const [Files,setFiles] = useState([])
+	// const [title,setTitle] = useState("")
+	// const [sourceCode,setSourceCode] = useState("")
+	// const [subtitle,setSubtitle] = useState("")
+	const [datas,setDatas] = useState({
+		title:"",
+		sourceCode: "",
+		subtitle: "",
+		role:"",
+		description: "",
+		organisation:[],
+		tag:[],
+
+	})
 	const { user, logout } = useUser();
-	// const data = {};
 	const [val, setVal] = useState(0);
-	const inputEl = useRef(null);
 
 	const updateData = async (projectname, datas) => {
 		try {
@@ -121,7 +133,7 @@ export default function Admin() {
 		}
 		else{
 			const data = clean(datas)
-			var coverimg = inputEl.current.files[0];
+			var coverimg = Cover.current.files[0];
 			const cov = uploadImageAsPromise("projects/" + data["title"] + "/", coverimg)
 			cov.then((fileURL) => {
 				data['cover'] = fileURL[0]
@@ -135,7 +147,6 @@ export default function Admin() {
 		}
 	}
 	const [value, setValue] = useState(0);
-	console.log(user)
 	if (user) {
 		return (
 			<div>
@@ -154,14 +165,14 @@ export default function Admin() {
         	</Tabs>
 					<TabPanel value={value} index={0}>
 						<section>
-								<h2>Cover</h2><input type='file' ref={inputEl} />
+								<h2>Cover</h2><input type='file' ref={Cover} />
 								<h2>Other photos</h2><input type='file' id='photos' onChange={(e)=>{
 									setFiles([...e.target.files])
 									}} multiple/>
 								<progress value={val} max="100"></progress>
 							</section>
 							<section>
-								<h1> <input type='text' id='title' placeholder='title'/> ||| <input type='text' id='sourceCode' placeholder='http"//www.github.com/example'/></h1>
+								<h1><input type='text' id='title' placeholder='title'/> ||| <input type='text' id='sourceCode' placeholder='http"//www.github.com/example'/></h1>
 								<h2> <input type='text' id='subtitle' placeholder='subtitle'/> || As : <input type='text' id='role' placeholder='role'/></h2>
 								<textarea type='text' id='description' placeholder='description' rows='10' col='30'/>
 								<div>
