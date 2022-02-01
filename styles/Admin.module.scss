@@ -2,6 +2,7 @@
   min-height: 77vh;
   padding: 5rem;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   section {
@@ -25,22 +26,5 @@
   textarea {
     font-size: 1.5rem;
     width: 100%;
-  }
-}
-.row {
-  padding: 0rem 3rem;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  input {
-    font-size: 1.7rem;
-    font-family: "Quicksand", "Prompt", sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
   }
 }

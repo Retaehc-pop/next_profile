@@ -22,15 +22,16 @@ export default function About () {
 		<Layout>
 			<main className={styles.main}>
 			<section className={styles.profile}>
-				<img src="/img/BG.JPG"/>
+				<img src="/img/Profile.png"/>
 				<h1>{t("about:title")}</h1>
 			</section>
 			
 			<section>
-			<h1>{t("about:overview")}</h1>
+			<h1>{t("about:name")}</h1>
+			<h2><a href="/img/Profile.png" download>Download CV</a></h2>
 				<div className={styles.overview}>
 					<div>
-						<h2>{t("about:name")}</h2>
+						<h2>‎</h2>
 						<div className={styles.aboutcard}>
 							<p><FontAwesomeIcon icon={faBirthdayCake}/> {t("about:dateOfBirth")}</p>
 							<h5>20 March 2003</h5>
@@ -129,19 +130,14 @@ export default function About () {
 					<h1>{t("about:organisation")}</h1>
 					<div className={styles.organisation}>
 						<div>
-							<img src="/img/BG.JPG"/>
-							<h2>SPACE AC</h2>
+							<img src="https://firebasestorage.googleapis.com/v0/b/profile-retaehc.appspot.com/o/IMG%20Files%2FSPACEAC.png?alt=media&token=ee9c1705-46f9-416e-8265-0080a2d5ac9e"/>
+							<Link href="https://spaceac.net/"><h2>SPACE AC</h2></Link>
 							<h4>{t("about:spaceRole")}</h4>
 						</div>
 						<div>
-							<img src="/img/BG.JPG"/>
-							<h2>SPACE AC</h2>
-							<h4>{t("about:spaceRole")}</h4>
-						</div>
-						<div>
-							<img src="/img/BG.JPG"/>
-							<h2>SPACE AC</h2>
-							<h4>{t("about:spaceRole")}</h4>
+							<img src="https://firebasestorage.googleapis.com/v0/b/profile-retaehc.appspot.com/o/IMG%20Files%2FInteract.png?alt=media&token=70ec1b63-374b-481d-a012-05a0236fb691"/>
+							<Link href="https://www.instagram.com/acinteractclub/"><h2>Interact</h2></Link>
+							<h4>{t("about:interactRole")}</h4>
 						</div>
 					</div>
 				</section>
