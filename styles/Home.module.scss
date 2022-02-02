@@ -58,11 +58,7 @@
   section {
     width: 60vw;
   }
-  img {
-    object-fit: cover;
-    width: 100%;
-    height: auto;
-  }
+
   div {
     display: flex;
     justify-content: center;
@@ -80,12 +76,12 @@
       z-index: 10000;
     }
 
-    :hover img {
+    &:hover img {
       transition-duration: 2s;
       filter: brightness(0.8);
       -webkit-filter: brightness(0.8);
     }
-    :hover h2 {
+    &:hover h2 {
       visibility: visible;
       transition-duration: 1s;
     }

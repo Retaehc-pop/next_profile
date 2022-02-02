@@ -125,11 +125,9 @@ export default function Home({ projects }) {
             <AutoplaySlider play={true} interval={3000} bullets={false} cancelOnInteraction={false}>
                 {
                   projects.map(project=>(
-                    <div key={project.title}>
-                      <Link href={`/projects/${project.title}`}>
+                      <Link key={project.title} href={`/projects/${project.title}`}>
                         <img src={project.cover}></img>
                       </Link>
-                    </div>
                   ))
                 }
               </AutoplaySlider>
