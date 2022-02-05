@@ -80,13 +80,13 @@ export default function Project({ project }) {
             <div>
               <h2>Tag :</h2>
               {
-                project.organisation.map(organisation=>(
-                  <h3 key={organisation}>{organisation}</h3>
+                project.categories.map(category=>(
+                  <h3 key={category}>{category}</h3>
                 ))
               }
               {
-                project.tag.map(tag=>(
-                  <h3 key={tag}>{tag}</h3>
+                project.tools.map(tool=>(
+                  <h3 key={tool}>{tool}</h3>
                 ))
               }
             </div>

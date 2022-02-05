@@ -17,6 +17,7 @@
   min-height: 70vh;
 
   h1 {
+    color: #eeee;
     z-index: 5;
   }
   img {
@@ -35,12 +36,28 @@
   padding: 0.25rem;
 }
 .overview {
+  position: relative;
   display: flex;
-  flex-direction: row;
   padding: 2rem;
   justify-content: space-evenly;
-  height: 100%;
-  width: 100%;
+  // height: 100%;
+  // width: 100%;
+  section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 2rem;
+    height: 100%;
+    width: 100%;
+    span {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  span {
+    padding: 0.25rem;
+  }
   h2 {
     text-align: center;
   }
@@ -87,6 +104,7 @@
     }
     h3,
     a {
+      font-size: 1rem;
       position: relative;
       display: flex;
       z-index: 2;
@@ -108,8 +126,12 @@
     align-items: center;
     width: 30vw;
     height: 10vh;
-    // margin: 2rem;
     min-height: inherit;
+  }
+  a {
+    color: #eeee;
+    text-decoration: none;
+    pointer-events: auto;
   }
   img {
     position: absolute;
@@ -122,13 +144,6 @@
     filter: brightness(50%);
     // opacity: 0.8;
     z-index: 1;
-    &:hover,
-    &:active,
-    &:focus {
-      filter: brightness(90%);
-      opacity: 1;
-      transition-duration: 500ms;
-    }
   }
   h2 {
     font-size: 2rem;

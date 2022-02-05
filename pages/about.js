@@ -4,7 +4,7 @@ import hexstyles from "../styles/hexagonal.module.scss"
 import { Layout } from "../components/layout/layout"
 import useTranslation from "next-translate/useTranslation"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBirthdayCake,faCamera,faPlus, faCode,faCog, faEnvelope, faGlobeAsia, faGraduationCap, faLanguage, faMapMarkedAlt, faPhone, faUserAstronaut, faShapes, faSchool, faPlane, faUserGraduate, faGrinSquint, faDatabase, faInfinity} from '@fortawesome/free-solid-svg-icons'
+import { faBirthdayCake, faEnvelope, faGlobeAsia, faGraduationCap, faMapMarkedAlt, faPhone, faShapes, faSchool, faPlane, faUserGraduate, faInfinity,faDatabase, faTrophy} from '@fortawesome/free-solid-svg-icons'
 import { faCss3Alt, faCuttlefish, faEthereum, faGitAlt, faHtml5, faJs, faPython } from "@fortawesome/free-brands-svg-icons"
 import Link from "next/link"
 
@@ -26,77 +26,50 @@ export default function About () {
 				<h1>{t("about:title")}</h1>
 			</section>
 			
-			<section>
-			<h1>{t("about:name")}</h1>
-			<h2><a href="/img/Profile.png" download>Download CV</a></h2>
-				<div className={styles.overview}>
-					<div>
-						<h2>‎</h2>
-						<div className={styles.aboutcard}>
-							<p><FontAwesomeIcon icon={faBirthdayCake}/> {t("about:dateOfBirth")}</p>
-							<h5>20 March 2003</h5>
-						</div>
-						<div className={styles.aboutcard}>
-							<p><FontAwesomeIcon icon={faGlobeAsia}/> {t("about:countryOfCitizen")}</p>
-							<h5>{t("about:thailand")}</h5>
-						</div>
-						<div className={styles.aboutcard}>
-							<p><FontAwesomeIcon icon={faEnvelope}/> {t("about:email")}</p>
-							<h5>Papop2003@gmail.com</h5>
-						</div>
-					</div>
+			<section className={styles.overview}>
+				<h1>{t("about:name")}</h1>
+        <span><h2>Personal Info</h2></span>
+				<section>
+					<span>
+						<p><FontAwesomeIcon icon={faBirthdayCake}/> {t("about:dateOfBirth")}</p>
+						<h5>20 March 2003</h5>
+					</span>
+					<span>
+						<p><FontAwesomeIcon icon={faGlobeAsia}/> {t("about:countryOfCitizen")}</p>
+						<h5>{t("about:thailand")}</h5>
+					</span>
+					<span>
+						<p><FontAwesomeIcon icon={faMapMarkedAlt}/> {t("about:address")}</p>
+						<h5>{t("about:location")}</h5>
+					</span>
+					<span>
+						<p><FontAwesomeIcon icon={faGraduationCap}/> {t("about:education")}</p>
+						<h5>{t("about:school")}</h5>
+					</span>
+					<span>
+						<p><FontAwesomeIcon icon={faEnvelope}/> {t("about:email")}</p>
+						<h5>Papop2003@gmail.com</h5>
+					</span>
+					<span>
+						<p><FontAwesomeIcon icon={faPhone}/> {t("about:phone")}</p>
+						<h5>+66 89 811 8068</h5>
+					</span>
+					<span>
+						<p><FontAwesomeIcon icon={faTrophy}/> Goal</p>
+						<h5>+66 89 811 8068</h5>
+					</span>
+					<span>
+						<p><FontAwesomeIcon icon={faMapMarkedAlt}/> {t("about:address")}</p>
+						<h5>{t("about:location")}</h5>
+					</span>
+					<span>
+						<p><FontAwesomeIcon icon={faGraduationCap}/> {t("about:education")}</p>
+						<h5>{t("about:school")}</h5>
+					</span>
+				</section>
+			</section>
 
-					<div>
-						<h2>‎</h2>
-						<div className={styles.aboutcard}>
-							<p><FontAwesomeIcon icon={faPhone}/> {t("about:phone")}</p>
-							<h5>+66 89 811 8068</h5>
-						</div>
-						<div className={styles.aboutcard}>
-							<p><FontAwesomeIcon icon={faMapMarkedAlt}/> {t("about:address")}</p>
-							<h5>{t("about:location")}</h5>
-						</div>
-						<div className={styles.aboutcard} >
-							<p><FontAwesomeIcon icon={faGraduationCap}/> {t("about:education")}</p>
-							<h5>{t("about:school")}</h5>
-						</div>
-					</div>
-
-					<div>
-						<h2>{t("about:organisation")}</h2>
-						<div className={styles.aboutcard}>
-							<p><FontAwesomeIcon icon={faUserAstronaut}/> SPACE AC</p>
-							<h5>{t("about:spaceRole")}</h5>
-						</div>
-						<div className={styles.aboutcard}>
-							<p><FontAwesomeIcon icon={faCog}/> Interact</p>
-							<h5>{t("about:interactRole")}</h5>
-						</div>
-						<div className={styles.aboutcard}>
-							<p><FontAwesomeIcon icon={faGraduationCap}/> GenSTEM</p>
-							<h5>{t("about:genstemRole")}</h5>
-						</div>
-					</div>
-					
-					<div>
-						<h2>{t("about:skill")}</h2>
-						<div className={styles.aboutcard}>
-							<p><FontAwesomeIcon icon={faCode}/> {t("about:programming")}</p>
-							<h5>Python, C, C++, Javascript, HTML, CSS</h5>
-							</div>
-							<div className={styles.aboutcard}>
-							<p><FontAwesomeIcon icon={faLanguage}/> {t("about:language")}</p>
-							<h5>{t("about:spokenLanguage")}</h5>
-							</div>
-							<div className={styles.aboutcard}>
-							<p><FontAwesomeIcon icon={faCamera}/> {t("about:other")}</p>
-							<h5>{t("about:otherSkill")}</h5>
-							</div>
-						</div>
-					</div>
-				</section >
-
-				<section id="organisation">
+				<section id="education">
 					<h1>{t("about:education")}</h1>
 					<div className={styles.schools}>
 						<div>
@@ -115,7 +88,7 @@ export default function About () {
 							<img src="https://firebasestorage.googleapis.com/v0/b/profile-retaehc.appspot.com/o/IMG%20Files%2Fkatolische%20marienschule.jpg?alt=media&token=b779acfa-c7cc-4546-bcc1-02e39f109edd"/>
 							<h2><FontAwesomeIcon icon={faPlane}/></h2>
 							<h2>Exchange year</h2>
-							<h3><Link href="https://marienschule-potsdam.de/" >Katholishe Marienschule potsdam,Germany</Link></h3>
+							<h3><Link href="https://marienschule-potsdam.de/">Katholishe Marienschule potsdam,Germany</Link></h3>
 						</div>
 						<div>
 							<img src="https://firebasestorage.googleapis.com/v0/b/profile-retaehc.appspot.com/o/IMG%20Files%2FAssumption_College.jpg?alt=media&token=3357e434-b61b-42ff-8567-02f25b0f2151"/>
@@ -131,12 +104,12 @@ export default function About () {
 					<div className={styles.organisation}>
 						<div>
 							<img src="https://firebasestorage.googleapis.com/v0/b/profile-retaehc.appspot.com/o/IMG%20Files%2FSPACEAC.png?alt=media&token=ee9c1705-46f9-416e-8265-0080a2d5ac9e"/>
-							<Link href="https://spaceac.net/"><h2>SPACE AC</h2></Link>
+							<h2><Link href="https://spaceac.net/">SPACE AC</Link></h2>
 							<h4>{t("about:spaceRole")}</h4>
 						</div>
 						<div>
 							<img src="https://firebasestorage.googleapis.com/v0/b/profile-retaehc.appspot.com/o/IMG%20Files%2FInteract.png?alt=media&token=70ec1b63-374b-481d-a012-05a0236fb691"/>
-							<Link href="https://www.instagram.com/acinteractclub/"><h2>Interact</h2></Link>
+							<h2><Link href="https://www.instagram.com/acinteractclub/">Interact</Link></h2>
 							<h4>{t("about:interactRole")}</h4>
 						</div>
 					</div>

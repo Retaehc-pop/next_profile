@@ -38,37 +38,48 @@
     z-index: 10;
   }
 }
-// .filter {
-// }
-.cards {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.start {
+  padding: 5rem 0rem;
   width: 100vw;
-  align-items: center;
+  section {
+    width: 80vw;
+  }
+  a {
+    height: 100%;
+    background-color: var(--color-primary);
+    color: var(--color-background);
+    z-index: 1000;
+  }
+}
+.cards {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 100%;
+  // width: 100%;
   div {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     border-radius: 25px;
-    width: 70vw;
+    width: 50vw;
     padding: 0.5rem;
     margin: 1rem;
   }
   img {
     height: 100%;
-    width: 70vw;
+    width: 50vw;
     position: absolute;
     display: flex;
     object-fit: cover;
     filter: brightness(70%) blur(0.3rem);
     -webkit-filter: brightness(70%) blur(0.3rem);
-    &:hover {
-      transition-duration: 1000ms;
-      filter: brightness(100%) blur(0.1rem);
-      -webkit-filter: brightness(100%) blur(0.1rem);
-    }
+    // &:hover {
+    //   transition-duration: 1000ms;
+    //   filter: brightness(100%) blur(0.1rem);
+    //   -webkit-filter: brightness(100%) blur(0.1rem);
+    // }
   }
   h1 {
     color: #eeee;

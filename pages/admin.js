@@ -138,7 +138,7 @@ export default function Admin() {
 			cov.then((fileURL) => {
 				data['cover'] = fileURL[0]
 			})
-			const promises = files.map(file => uploadImageAsPromise("projects/" + data["title"]+ "/", file));
+			const promises = Files.map(file => uploadImageAsPromise("projects/" + data["title"]+ "/", file));
 			Promise.all(promises).then((fileURLS) => {
 				data["imgs"] = fileURLS
 				// files = [];

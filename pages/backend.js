@@ -159,7 +159,6 @@ export default function backend({ projects }){
         <Tabs value={value} onChange={(event, newValue) => {setValue(newValue)}}>
           <Tab label="Update project" {...a11yProps(0)} />
           <Tab label="New project" {...a11yProps(1)} />
-          <Tab label="Delete project" {...a11yProps(2)} />
         </Tabs>
         <TabPanel value={value} index={0}>
         <section>
