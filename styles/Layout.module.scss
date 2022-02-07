@@ -1,12 +1,16 @@
 .nav {
   position: fixed;
   display: flex;
-  padding: 0.5rem 2rem;
+  padding: 0rem 2rem;
   width: 100%;
+  height: 3.5rem;
+  align-items: center;
   justify-content: space-around;
-  z-index: 100;
+  z-index: 10000;
   background-color: var(--color-background);
-
+  img {
+    object-fit: contain;
+  }
   a {
     pointer-events: auto;
     text-decoration: none;

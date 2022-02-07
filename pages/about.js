@@ -4,7 +4,7 @@ import hexstyles from "../styles/hexagonal.module.scss"
 import { Layout } from "../components/layout/layout"
 import useTranslation from "next-translate/useTranslation"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBirthdayCake, faEnvelope, faGlobeAsia, faGraduationCap, faMapMarkedAlt, faPhone, faShapes, faSchool, faPlane, faUserGraduate, faInfinity,faDatabase, faTrophy} from '@fortawesome/free-solid-svg-icons'
+import { faBirthdayCake, faEnvelope, faGlobeAsia, faGraduationCap, faMapMarkedAlt, faPhone, faShapes, faSchool, faPlane, faUserGraduate, faInfinity,faDatabase, faTrophy, faHeart} from '@fortawesome/free-solid-svg-icons'
 import { faCss3Alt, faCuttlefish, faEthereum, faGitAlt, faHtml5, faJs, faPython } from "@fortawesome/free-brands-svg-icons"
 import Link from "next/link"
 
@@ -56,15 +56,11 @@ export default function About () {
 					</span>
 					<span>
 						<p><FontAwesomeIcon icon={faTrophy}/> Goal</p>
-						<h5>+66 89 811 8068</h5>
+						<h5>Software Engineer</h5>
 					</span>
 					<span>
-						<p><FontAwesomeIcon icon={faMapMarkedAlt}/> {t("about:address")}</p>
-						<h5>{t("about:location")}</h5>
-					</span>
-					<span>
-						<p><FontAwesomeIcon icon={faGraduationCap}/> {t("about:education")}</p>
-						<h5>{t("about:school")}</h5>
+						<p><FontAwesomeIcon icon={faHeart}/> Interest</p>
+						<h5>Game Dev, AI, Web3</h5>
 					</span>
 				</section>
 			</section>
