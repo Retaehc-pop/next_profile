@@ -71,10 +71,10 @@ export const Layout = ({children}) =>{
 			<ActiveLink children="Home"  href="/">
 				<img src="/favicon.ico" width={50} height={50}/>
 			</ActiveLink>
-			<p><Link href="/about">{t("about:title")}</Link></p>
-			<p><Link href="/projects">{t("projects:title")}</Link></p>
+			<p><ActiveLink href="/about">{t("about:title")}</ActiveLink></p>
+			<p><ActiveLink href="/projects">{t("projects:title")}</ActiveLink></p>
 			<p><ActiveLink children="contact"  href="/contact">{t("common:contact")}</ActiveLink></p>
-			<p><Link href={router.asPath} locale={router.locales[(router.locales.indexOf(router.locale)+1)%router.locales.length]}><FontAwesomeIcon icon={faLanguage} size='2x'/></Link></p>
+			<p><ActiveLink href={router.asPath} locale={router.locales[(router.locales.indexOf(router.locale)+1)%router.locales.length]}><FontAwesomeIcon icon={faLanguage} size='2x'/></ActiveLink></p>
 			<p className={styles.ico}><FontAwesomeIcon onClick={() => setDarkTheme(!darkTheme)} icon={faAdjust} size='2x'></FontAwesomeIcon></p>
 		</nav>
 		{children}
@@ -85,39 +85,39 @@ export const Layout = ({children}) =>{
 			</section>
 			<div>
 				<h3  className={styles.ico}>
-					<Link href="mailto:papop2003@gmail.com">
+					<ActiveLink href="mailto:papop2003@gmail.com">
 							<FontAwesomeIcon icon={faEnvelope} size='2x'></FontAwesomeIcon>
-					</Link>
+					</ActiveLink>
 				</h3>
 				<h3 className={styles.ico}>
-					<Link href="https://www.instagram.com/pop.pxp/" >
+					<ActiveLink href="https://www.instagram.com/pop.pxp/" >
 							<FontAwesomeIcon icon={faInstagram} size='2x'></FontAwesomeIcon>
-					</Link>
+					</ActiveLink>
 				</h3>
 				<h3  aria-hidden="true" className={styles.ico}>
-					<Link href="https://github.com/Retaehc-pop">
+					<ActiveLink href="https://github.com/Retaehc-pop">
 						<FontAwesomeIcon icon={faGithub} size='2x'></FontAwesomeIcon>
-					</Link>
+					</ActiveLink>
 				</h3>
 				<h3 aria-hidden="true" className={styles.ico}>
-					<Link href="tel:+66898118068">
+					<ActiveLink href="tel:+66898118068">
 						<FontAwesomeIcon icon={faPhone} size='2x' ></FontAwesomeIcon>
-					</Link>
+					</ActiveLink>
 				</h3>
 				<h3 className={styles.ico}>
-					<Link href="https://stackoverflow.com/users/14537225/papop-lekhapanyaporn">
+					<ActiveLink href="https://stackoverflow.com/users/14537225/papop-lekhapanyaporn">
 							<FontAwesomeIcon icon={faStackOverflow} size='2x'></FontAwesomeIcon>
-					</Link>
+					</ActiveLink>
 				</h3>
 				<h3  className={styles.ico}>
-					<Link href="https://www.linkedin.com/in/papop-lekhapanyaporn-2386b5229/">
+					<ActiveLink href="https://www.linkedin.com/in/papop-lekhapanyaporn-2386b5229/">
 						<FontAwesomeIcon icon={faLinkedin} size='2x'></FontAwesomeIcon>
-					</Link>
+					</ActiveLink>
 				</h3>
 				<h3 className={styles.ico}>
-					<Link href="https://discordapp.com/users/267572826418970624">
+					<ActiveLink href="https://discordapp.com/users/267572826418970624">
 						<FontAwesomeIcon icon={faDiscord} size='2x'></FontAwesomeIcon>
-					</Link>
+					</ActiveLink>
 				</h3>
 			</div>
 		</footer>

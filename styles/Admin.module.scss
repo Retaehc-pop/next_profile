@@ -3,28 +3,30 @@
   padding: 5rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  // justify-content: center;
   align-items: center;
   section {
     position: relative;
-    display: flex;
-    padding-top: 2rem;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 50vw;
-    border-radius: 25px;
+    // display: flex;
+    // flex-direction: column;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: repeat(2, 1fr);
     color: var(--color-primary);
     background-color: var(--color-background);
+    & * {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
   input {
-    font-size: 1.5rem;
+    font-size: 1rem;
     padding: 1rem;
     margin: 1rem;
   }
   textarea {
-    font-size: 1.5rem;
+    font-size: 1rem;
     width: 100%;
   }
 }

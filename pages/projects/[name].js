@@ -37,7 +37,8 @@ export const getStaticProps = async (context) => {
     const docRef = doc(db, 'projects', name)
     const res = await getDoc(docRef)
     const data = res.data()
-
+    data.imgs.push(data.cover)
+    data.imgs.reverse()
     return {
       props: { project: data }
     }
@@ -49,10 +50,10 @@ export const getStaticProps = async (context) => {
 
 export default function Project({ project }) {
   const AutoplaySlider = withAutoplay(AwesomeSlider)
-  const [images,setImages] = useState([])
+  let images = project.imgs
   useEffect(() => {
-    setImages(project.imgs)
-    images.push(project.cover)
+    images.unshift(project.cover)
+    console.log("project")
 	}, []);
   return (
     <div>
@@ -77,7 +78,7 @@ export default function Project({ project }) {
             <h1> {project.title} <a href={project.sourceCode}><FontAwesomeIcon icon={faGithub}></FontAwesomeIcon></a></h1>
             <h2> {project.subtitle} || As : {project.role}</h2>
             <p>{project.description}</p>
-            <div>
+            <div className={styles.tag}>
               <h2>Tag :</h2>
               {
                 project.categories.map(category=>(

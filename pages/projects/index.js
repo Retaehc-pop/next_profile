@@ -78,7 +78,7 @@ export default function Projects({ projects }) {
 						{
 							projects.map(project=>(
 								<Link  key={project.title} href={`/projects/${project.title}`}>
-									<div >
+									<div>
 										<img src={project.cover} placeholder='blur'/>
 										<h1>{project.title}</h1>
 									</div>

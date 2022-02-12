@@ -50,7 +50,7 @@ async function uploadImageAsPromise(path, imageFile) {
     const task = uploadBytesResumable(storageRef, imageFile);
     task.on('state_change',
       function progress(snapshot) {
-        setVal((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
+        console.log((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
       },
       function error(err) {
         reject(error);
@@ -94,9 +94,10 @@ export default function backend({ projects }){
     title:"",
 		source: "",
 		subtitle: "",
+    cover:"",
 		role:"",
 		description: "",
-		catagories:[],
+		categories:[],
 		tools:[],
   })
 	const [value, setValue] = useState(0);
@@ -116,10 +117,13 @@ export default function backend({ projects }){
 			alert("please input title")
 			return
 		}
+    datas.categories = datas.categories.split(",")
+    datas.tools = datas.tools.split(",")
 		var coverimg = Cover.current.files[0];
     const cov = uploadImageAsPromise("projects/" + datas.title + "/", coverimg)
     cov.then((fileURL) => {
-      datas['cover'] = fileURL[0]
+      console.log(fileURL)
+      datas['cover'] = fileURL
     })
     const promises = imgFiles.map(file => uploadImageAsPromise("projects/" +datas.title+ "/", file));
     Promise.all(promises).then(async (fileURLS) => {
@@ -157,8 +161,8 @@ export default function backend({ projects }){
       <Layout>
       <main className={styles.main}>
         <Tabs value={value} onChange={(event, newValue) => {setValue(newValue)}}>
-          <Tab label="Update project" {...a11yProps(0)} />
-          <Tab label="New project" {...a11yProps(1)} />
+          <Tab label="New project" {...a11yProps(0)} />
+          <Tab label="Update project" {...a11yProps(1)} />
         </Tabs>
         <TabPanel value={value} index={0}>
         <section>
@@ -166,47 +170,39 @@ export default function backend({ projects }){
             <h2>Other photos</h2><input type='file' id='photos' onChange={(e)=>{setImgFiles([...e.target.files])}} multiple/>
           </section>
           <section>
-            <h1>
-              <input value={datas.title} type='text' onChange={datasChange} name='title' placeholder='title'/> ||| 
+              <input value={datas.title} type='text' onChange={datasChange} name='title' placeholder='title'/>
               <input value={datas.source} type='text' onChange={datasChange} name='source' placeholder='source'/>
-            </h1>
-            <h2>
-              <input value={datas.subtitle} type='text' onChange={datasChange} name='subtitle' placeholder='subtitle'/> || As : 
-              <input value={datas.role} type='text' onChange={datasChange} name='role' placeholder='role'/></h2>
-            <textarea value={datas.description} type='text' onChange={datasChange} name='description' placeholder='description' rows='10' col='30'/>
-            <div>
-              <input value={datas.catagories} type='text' onChange={datasChange} name='catagories' placeholder='catagories'/>
+              <input value={datas.subtitle} type='text' onChange={datasChange} name='subtitle' placeholder='subtitle'/>
+              <input value={datas.role} type='text' onChange={datasChange} name='role' placeholder='role'/>
+              <textarea value={datas.description} type='text' onChange={datasChange} name='description' placeholder='description' rows='10' col='20'/>
+              <input value={datas.categories} type='text' onChange={datasChange} name='categories' placeholder='categories'/>
               <input value={datas.tools} type='text' onChange={datasChange} name='tools' placeholder='tools'/>
-            </div>
             <button onClick={uploadData}>Upload Data</button>
           </section>
+          
      			</TabPanel>
            <TabPanel value={value} index={1}>
            <section>
             <h2>Cover</h2><input type='file' ref={Cover} />
             <h2>Other photos</h2><input type='file' id='photos' onChange={(e)=>{setImgFiles([...e.target.files])}} multiple/>
-            {/* <progress value={val} max="100"></progress> */}
           </section>
           <section>
-            <h1>
-            <Autocomplete disablePortal 
+            <Autocomplete  
             options={projects.map(p=>p.title)} 
             renderInput={(params) => <TextField {...params} label="Projects"/>} 
             onChange={(e)=>{
               var a =  projects.find((item)=>item.title===e.target.textContent)
               setDatas(a)
               console.log(a)
-              }}/> ||| 
+              }}/>
               <input value={datas.source} type='text' onChange={datasChange} name='source' placeholder='source'/>
-            </h1>
-            <h2>
-              <input value={datas.subtitle} type='text' onChange={datasChange} name='subtitle' placeholder='subtitle'/> || As : 
-              <input value={datas.role} type='text' onChange={datasChange} name='role' placeholder='role'/></h2>
-            <textarea value={datas.description} type='text' onChange={datasChange} name='description' placeholder='description' rows='10' col='30'/>
-            <div>
-              <input value={datas.catagories} type='text' onChange={datasChange} name='catagories' placeholder='catagories'/>
+              <input value={datas.subtitle} type='text' onChange={datasChange} name='subtitle' placeholder='subtitle'/>
+              <input value={datas.role} type='text' onChange={datasChange} name='role' placeholder='role'/>
+              <textarea value={datas.description} type='text' onChange={datasChange} name='description' placeholder='description' rows='10' col='30'/>
+ 
+              <input value={datas.categories} type='text' onChange={datasChange} name='categories' placeholder='categories'/>
               <input value={datas.tools} type='text' onChange={datasChange} name='tools' placeholder='tools'/>
-            </div>
+
             <button onClick={updateData}> Update Data</button>
           </section>
       		</TabPanel>
