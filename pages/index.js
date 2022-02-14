@@ -1,8 +1,6 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.scss'
-import Link from 'next/link'
 import { useRouter } from 'next/router'
-import ActiveLink from '../components/router/activelink'
 import { useState,useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBirthdayCake, faSearch,faCamera, faCode,faCog, faEnvelope, faGlobeAsia, faGraduationCap, faLanguage, faMapMarkedAlt, faPhone, faUserAstronaut} from '@fortawesome/free-solid-svg-icons'
@@ -46,7 +44,6 @@ export default function Home({ projects }) {
     projects.map((project)=>(
       images.push(project.cover)
     ))
-    console.log(images)
 	}, []);
   return (
     <div>
@@ -140,7 +137,7 @@ export default function Home({ projects }) {
             cancelOnInteraction={false}>
                 {
                   projects.map(project=>(
-                    <div  data-src={project.cover}>
+                    <div  key={project.title} data-src={project.cover}>
                         <AwesomeButton className="Button" size="large" type="primary" onPress={() => router.push("/projects")}>My {t("projects:title")}</AwesomeButton>
                     </div>
                   ))

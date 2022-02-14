@@ -71,9 +71,6 @@ export default function Projects({ projects }) {
 							</AutoplaySlider>
 						</section>
 					</section>
-					<section className={styles.search}>
-						<input type="text"/>
-					</section>
 					<section className={styles.cards}>
 						{
 							projects.map(project=>(

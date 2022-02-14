@@ -18,6 +18,16 @@
   a:visited {
     color: var(--color-primary);
   }
+  h3 {
+    padding: 1rem;
+    border-radius: 50%;
+    &:hover,
+    &:active {
+      border-radius: 50%;
+      transform: rotate(360deg);
+      transition-duration: 1000ms;
+    }
+  }
 }
 .footer {
   display: flex;

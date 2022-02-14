@@ -68,14 +68,14 @@ export const Layout = ({children}) =>{
 	return (
 	<div>
 		<nav className={styles.nav}>
-			<ActiveLink children="Home"  href="/">
+			<Link children="Home"  href="/" passHref>
 				<img src="/favicon.ico" width={50} height={50}/>
-			</ActiveLink>
-			<p><ActiveLink href="/about">{t("about:title")}</ActiveLink></p>
-			<p><ActiveLink href="/projects">{t("projects:title")}</ActiveLink></p>
-			<p><ActiveLink children="contact"  href="/contact">{t("common:contact")}</ActiveLink></p>
-			<p><ActiveLink href={router.asPath} locale={router.locales[(router.locales.indexOf(router.locale)+1)%router.locales.length]}><FontAwesomeIcon icon={faLanguage} size='2x'/></ActiveLink></p>
-			<p className={styles.ico}><FontAwesomeIcon onClick={() => setDarkTheme(!darkTheme)} icon={faAdjust} size='2x'></FontAwesomeIcon></p>
+			</Link>
+			<Link href="/about" passHref><a>{t("about:title")}</a></Link>
+			<Link href="/projects" passHref><a>{t("projects:title")}</a></Link>
+			<Link children="contact"  href="/contact" passHref><a>{t("common:contact")}</a></Link>
+			<Link href={router.asPath} locale={router.locales[(router.locales.indexOf(router.locale)+1)%router.locales.length]} passHref><a><FontAwesomeIcon icon={faLanguage} size='2x'/></a></Link>
+			<h3 className={styles.ico}><FontAwesomeIcon onClick={() => setDarkTheme(!darkTheme)} icon={faAdjust} size='2x'></FontAwesomeIcon></h3>
 		</nav>
 		{children}
 		<footer className={styles.footer}>
@@ -85,39 +85,53 @@ export const Layout = ({children}) =>{
 			</section>
 			<div>
 				<h3  className={styles.ico}>
-					<ActiveLink href="mailto:papop2003@gmail.com">
-							<FontAwesomeIcon icon={faEnvelope} size='2x'></FontAwesomeIcon>
-					</ActiveLink>
+					<Link href="mailto:papop2003@gmail.com" passHref>
+						<a>
+							<FontAwesomeIcon icon={faEnvelope} size='2x'/>
+						</a>
+					</Link>
 				</h3>
 				<h3 className={styles.ico}>
-					<ActiveLink href="https://www.instagram.com/pop.pxp/" >
-							<FontAwesomeIcon icon={faInstagram} size='2x'></FontAwesomeIcon>
-					</ActiveLink>
+					<Link href="https://www.instagram.com/pop.pxp/" passHref>
+						<a>
+							<FontAwesomeIcon icon={faInstagram} size='2x'/>
+							</a>
+					</Link>
 				</h3>
 				<h3  aria-hidden="true" className={styles.ico}>
-					<ActiveLink href="https://github.com/Retaehc-pop">
-						<FontAwesomeIcon icon={faGithub} size='2x'></FontAwesomeIcon>
-					</ActiveLink>
+					<Link href="https://github.com/Retaehc-pop" passHref>
+					<a>
+						<FontAwesomeIcon icon={faGithub} size='2x'/>
+						</a>
+					</Link>
 				</h3>
 				<h3 aria-hidden="true" className={styles.ico}>
-					<ActiveLink href="tel:+66898118068">
-						<FontAwesomeIcon icon={faPhone} size='2x' ></FontAwesomeIcon>
-					</ActiveLink>
+					<Link href="tel:+66898118068" passHref>
+					<a>
+						<FontAwesomeIcon icon={faPhone} size='2x'/>
+						</a>
+					</Link>
 				</h3>
 				<h3 className={styles.ico}>
-					<ActiveLink href="https://stackoverflow.com/users/14537225/papop-lekhapanyaporn">
-							<FontAwesomeIcon icon={faStackOverflow} size='2x'></FontAwesomeIcon>
-					</ActiveLink>
+					<Link href="https://stackoverflow.com/users/14537225/papop-lekhapanyaporn" passHref>
+						<a>
+							<FontAwesomeIcon icon={faStackOverflow} size='2x'/>
+							</a>
+					</Link>
 				</h3>
 				<h3  className={styles.ico}>
-					<ActiveLink href="https://www.linkedin.com/in/papop-lekhapanyaporn-2386b5229/">
-						<FontAwesomeIcon icon={faLinkedin} size='2x'></FontAwesomeIcon>
-					</ActiveLink>
+					<Link href="https://www.linkedin.com/in/papop-lekhapanyaporn-2386b5229/" passHref>
+					<a>
+						<FontAwesomeIcon icon={faLinkedin} size='2x'/>
+						</a>
+					</Link>
 				</h3>
 				<h3 className={styles.ico}>
-					<ActiveLink href="https://discordapp.com/users/267572826418970624">
-						<FontAwesomeIcon icon={faDiscord} size='2x'></FontAwesomeIcon>
-					</ActiveLink>
+					<Link href="https://discordapp.com/users/267572826418970624" passHref>
+					<a>
+						<FontAwesomeIcon icon={faDiscord} size='2x'/>
+						</a>
+					</Link>
 				</h3>
 			</div>
 		</footer>

@@ -8,9 +8,8 @@
   padding: 10rem;
   section {
     padding: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
   }
   div {
     padding: 3rem;
