@@ -71,6 +71,7 @@ export default function Home({ projects }) {
         <section className={styles.startup}>
           <img src="/img/BG.JPG" style={{position:"absolute",height:"100%",width:"100vw",filter:"blur(0.5rem)", WebkitFilter:"blur(0.5rem)"}}/>
           <img src="/img/anti.png" data-speed="3" className="layer" style={{height:"50vmin", zIndex:"10"}} />
+         
         </section>
 
         <section id="about" className={styles.about}>
