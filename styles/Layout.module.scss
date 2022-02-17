@@ -8,6 +8,11 @@
   justify-content: space-around;
   z-index: 10000;
   background-color: var(--color-background);
+  transition-duration: 500ms;
+  &:hover {
+    transition-duration: 500ms;
+    padding: 2.5rem 2rem;
+  }
   img {
     object-fit: contain;
   }

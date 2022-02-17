@@ -18,7 +18,7 @@ import {
 import 'react-awesome-button/dist/themes/theme-c137.css';
 
 import { db } from '../firebase/initFirebase'
-import { collection, query, where, doc, getDoc, getDocs } from "firebase/firestore"
+import { collection, query, where, doc, getDoc, getDocs, arrayRemove } from "firebase/firestore"
 
 import useTranslation from "next-translate/useTranslation"
 import { Layout } from '../components/layout/layout'
@@ -40,11 +40,24 @@ export default function Home({ projects }) {
   const AutoplaySlider = withAutoplay(AwesomeSlider)
   const router =  useRouter()
   const [images,setImages] = useState([])
+  
   useEffect(() => {
+    document.addEventListener("mousemove", parallax);
+    function parallax(e){
+      this.querySelectorAll(".layer").forEach(layer => {
+        const speed = layer.getAttribute('data-speed')
+        console.log(speed)
+        const x = (window.innerWidth  - e.pageX*speed)/100
+        const y = (window.innerHeight - e.pageY*speed)/100
+
+        layer.style.transform = `translateX(${x}px) translateY(${y}px)`
+      })
+    }
     projects.map((project)=>(
       images.push(project.cover)
     ))
 	}, []);
+
   return (
     <div>
       <Head>
@@ -57,7 +70,7 @@ export default function Home({ projects }) {
       <main className={styles.main}>
         <section className={styles.startup}>
           <img src="/img/BG.JPG" style={{position:"absolute",height:"100%",width:"100vw",filter:"blur(0.5rem)", WebkitFilter:"blur(0.5rem)"}}/>
-          <img src="/img/anti.png" style={{height:"50vmin", zIndex:"10"}} />
+          <img src="/img/anti.png" data-speed="3" className="layer" style={{height:"50vmin", zIndex:"10"}} />
         </section>
 
         <section id="about" className={styles.about}>

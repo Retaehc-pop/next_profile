@@ -1,20 +1,15 @@
 .main {
   min-height: 100%;
-  /* display: flex; */
   justify-content: center;
   align-items: right;
   img {
-    display: flex;
-    margin: 0%;
-    padding: 0;
     object-fit: cover;
   }
   section {
     position: relative;
     display: flex;
-    padding-top: 2rem;
+    // padding-top: 2rem;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     width: 100vw;
   }

@@ -19,7 +19,8 @@ function Box(props) {
   const [hovered, hover] = useState(false)
   const [clicked, click] = useState(false)
   // Subscribe this component to the render-loop, rotate the mesh every frame
-  useFrame((state, delta) => (ref.current.rotation.x += 0.01))
+  // useFrame((state, delta) => (ref.current.rotation.x += 0.01))
+  useFrame((state, delta) => (ref.current.rotation.x += 0.01,ref.current.rotation.y += 0.01,ref.current.rotation.z += 0.01 ))
   // Return the view, these are regular Threejs elements expressed in JSX
   return (
     <mesh
@@ -36,9 +37,8 @@ function Box(props) {
 }
 export default function Threed(){
   const scrollArea = useRef()
-  const onScroll = (e) => (state.top.current = e.target.scrollTop)
-  // const onScroll = () =>{  }
-  useEffect(()=> void onScroll({ target: scrollArea.current }),[])
+  const onScroll = e => (state.top.current = e.target.scrollTop)
+  useEffect(() => void onScroll({ target: scrollArea.current }), [])
   return (
     <div>
 		<Head>
@@ -53,8 +53,8 @@ export default function Threed(){
         <ambientLight intensity={0.5} />
         <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
         <pointLight position={[-10, 10, -10]} />
-        <Box position={[-1.2, 0, 0]} />
-        <Box position={[1.2, 0, 0]} />
+        <Box position={[-2, 0, 0]} />
+        <Box position={[2, 0, 0]} />
       </Canvas>
     </Layout>
     <div className="scrollArea" ref={scrollArea} onScroll={onScroll}>
