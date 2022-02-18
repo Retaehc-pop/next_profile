@@ -77,8 +77,14 @@
     flex-direction: column;
     align-items: center;
     transition-duration: 1000ms;
+
+    padding: 0em 0rem;
     height: auto;
-    // transform: translateY(-100%);
+    background-color: transparent;
+    &:hover {
+      transition-duration: 500ms;
+      padding: 0em 0rem;
+    }
     h2 {
       visibility: visible;
       &:active {
@@ -90,7 +96,11 @@
       height: fit-content;
       display: flex;
       flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: var(--color-background);
       transition-duration: 0.3s;
+      width: 100%;
     }
     .hidden {
       display: flex;
