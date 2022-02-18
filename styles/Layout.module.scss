@@ -9,6 +9,17 @@
   z-index: 10000;
   background-color: var(--color-background);
   transition-duration: 500ms;
+
+  div {
+    display: contents;
+  }
+  h2 {
+    position: fixed;
+    visibility: hidden;
+    top: 10px;
+    left: 10px;
+  }
+
   &:hover {
     transition-duration: 500ms;
     padding: 2.5rem 2rem;
@@ -60,6 +71,30 @@
       border-radius: 50%;
       transform: rotate(360deg);
       transition-duration: 1000ms;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+    align-items: center;
+    transition-duration: 1000ms;
+    height: auto;
+    // transform: translateY(-100%);
+    h2 {
+      visibility: visible;
+      &:active {
+        transform: rotate(360deg);
+        transition-duration: 200ms;
+      }
+    }
+    div {
+      height: fit-content;
+      display: flex;
+      flex-direction: column;
+      transition-duration: 0.3s;
+    }
+    .hidden {
+      display: flex;
+      transform: translateY(-120%);
     }
   }
 }
