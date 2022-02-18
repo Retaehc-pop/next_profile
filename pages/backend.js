@@ -87,7 +87,7 @@ function clean(obj){
   return obj
 }
 
-export default function backend({ projects }){
+export default function Backend({ projects }){
   const Cover = useRef(null)
   const [imgFiles,setImgFiles] = useState([])
   const [datas,setDatas] = useState({

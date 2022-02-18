@@ -70,12 +70,12 @@ export const Layout = ({children}) =>{
 		<nav className={styles.nav}>
 				<h2 onClick={()=>setIsOpen(!isOpen)} ><FontAwesomeIcon icon={isOpen ? faXmarkCircle:faBars} size='2x'/></h2>
 				<div className={isOpen? "":styles.hidden}>
-					<Link children="Home"  href="/" passHref>
+					<Link href="/" passHref>
 						<img src="/favicon.ico" width={50} height={50}/>
 					</Link>
 					<Link href="/about" passHref><a>{t("about:title")}</a></Link>
 					<Link href="/projects" passHref><a>{t("projects:title")}</a></Link>
-					<Link children="contact"  href="/contact" passHref><a>{t("common:contact")}</a></Link>
+					<Link  href="/contact" passHref><a>{t("common:contact")}</a></Link>
 					<Link href={router.asPath} locale={router.locales[(router.locales.indexOf(router.locale)+1)%router.locales.length]} passHref><a><FontAwesomeIcon icon={faLanguage} size='2x'/></a></Link>
 					<h3 className={styles.ico}><FontAwesomeIcon onClick={() => setDarkTheme(!darkTheme)} icon={faAdjust} size='2x'/></h3>
 				</div>
