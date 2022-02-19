@@ -115,4 +115,9 @@
     color: var(--color-background);
     z-index: 1000;
   }
+  @media screen and (max-width: 600px) {
+    section {
+      width: 100vw;
+    }
+  }
 }
