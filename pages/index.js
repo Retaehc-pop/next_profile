@@ -3,11 +3,12 @@ import styles from '../styles/Home.module.scss'
 import { useRouter } from 'next/router'
 import { useState,useEffect } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBirthdayCake, faC, faCamera, faCode,faCog, faEnvelope, faGlobeAsia, faGraduationCap, faLanguage, faMapMarkedAlt, faPhone, faUserAstronaut, faCodeBranch, faKeyboard, faSatellite, faRocket, faMicrochip, faSatelliteDish, faAtom} from '@fortawesome/free-solid-svg-icons'
+import { faBirthdayCake, faCamera, faCode,faCog, faEnvelope, faGlobeAsia, faGraduationCap, faLanguage, faMapMarkedAlt, faPhone, faUserAstronaut, faCodeBranch, faKeyboard, faSatellite, faRocket, faMicrochip, faSatelliteDish, faAtom} from '@fortawesome/free-solid-svg-icons'
 
 import AwsSliderStyle from "react-awesome-slider/dist/custom-animations/fall-animation.css"
 import AwesomeSlider from 'react-awesome-slider';
 import withAutoplay from 'react-awesome-slider/dist/autoplay';
+
 import 'react-awesome-slider/dist/styles.css';
 import {
   AwesomeButton,
@@ -22,7 +23,7 @@ import { collection, query, where, doc, getDoc, getDocs, arrayRemove } from "fir
 
 import useTranslation from "next-translate/useTranslation"
 import { Layout } from '../components/layout/layout'
-import { fa500px, faDocker, faGit, faGitAlt, faGithub, faJs, faPython } from '@fortawesome/free-brands-svg-icons'
+import { faGit, faGitAlt, faGithub, faJs, faPython } from '@fortawesome/free-brands-svg-icons'
 
 export const getStaticProps = async () => {
 	const allProject = [];

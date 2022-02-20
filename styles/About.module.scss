@@ -9,7 +9,14 @@
   section {
     position: relative;
     display: flex;
-    align-items: center;
+  }
+  h1 {
+    text-align: center;
+  }
+  @media screen and (max-width: 600px) {
+    h1 {
+      font-size: 2rem;
+    }
   }
 }
 .profile {
@@ -18,6 +25,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   min-height: 70vh;
   padding-top: 0rem;
 
@@ -38,23 +46,31 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 2rem;
   justify-content: space-evenly;
+  padding: 2rem;
+  width: 100vw;
   h1 {
     text-align: center;
+  }
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
   }
   section {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    padding: 2rem;
-    height: 100%;
-    width: 100%;
-    span {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
+    width: 60%;
+  }
+  main {
+    width: 40%;
+  }
+  span {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   span {
     padding: 0.25rem;
@@ -65,9 +81,16 @@
   h5 {
     text-align: center;
   }
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 1000px) {
+    div {
+      flex-direction: column;
+    }
     section {
       grid-template-columns: repeat(2, 1fr);
+      width: 100%;
+    }
+    main {
+      width: 100%;
     }
   }
 }
@@ -182,12 +205,12 @@
   section {
     display: flex;
     justify-content: center;
-    width: 30%;
+    width: 40%;
   }
   @media screen and (max-width: 900px) {
-    // flex-direction: column;
+    flex-direction: column;
     section {
-      width: 50%;
+      width: 100%;
     }
   }
   @media screen and (max-width: 600px) {
@@ -205,14 +228,30 @@
   width: 100vw;
   table {
     width: 80vw;
-    padding: 2rem;
+    padding-bottom: 2rem;
   }
   th {
-    font-size: 2rem;
+    font-size: 1.5rem;
     background-color: var(--color-primary);
     color: var(--color-background);
   }
   td {
     text-align: center;
+  }
+  @media screen and (max-width: 900px) {
+    th {
+      font-size: 1rem;
+    }
+    td {
+      font-size: 1rem;
+    }
+  }
+  @media screen and (max-width: 400px) {
+    th {
+      font-size: 0.8rem;
+    }
+    td {
+      font-size: 0.8rem;
+    }
   }
 }
