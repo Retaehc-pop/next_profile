@@ -14,15 +14,10 @@ import AwesomeSlider from 'react-awesome-slider';
 import withAutoplay from 'react-awesome-slider/dist/autoplay';
 import 'react-awesome-slider/dist/styles.css';
 import {
-  AwesomeButton,
-  AwesomeButtonProgress,
-  AwesomeButtonSocial,
-} from 'react-awesome-button';
+  AwesomeButton } from 'react-awesome-button';
 import 'react-awesome-button/dist/themes/theme-c137.css';
 
 import useTranslation from "next-translate/useTranslation"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 export const getStaticProps = async () => {
 	const allProject = [];
