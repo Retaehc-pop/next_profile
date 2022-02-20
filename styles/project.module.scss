@@ -4,8 +4,16 @@
   display: flex;
   align-items: center;
   section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     min-width: 50vw;
     padding: 0rem 3rem;
+  }
+  h1,
+  h2 {
+    text-align: center;
   }
   h3 {
     font-size: 1rem;
@@ -14,13 +22,32 @@
     border-radius: 25px;
     background-color: var(--color-secondary-accent);
   }
-}
-.tag {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  & * {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .tag {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    & * {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  @media screen and (max-width: 1200px) {
+    flex-direction: column;
+    section {
+      width: 100vw;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+    section {
+      width: 100vw;
+    }
+    .tag {
+      & * {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
   }
 }
