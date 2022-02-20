@@ -1,13 +1,20 @@
 import styles from "../styles/About.module.scss"
 import Head from "next/head"
+import Link from "next/link"
 import hexstyles from "../styles/hexagonal.module.scss"
 import { Layout } from "../components/layout/layout"
 import useTranslation from "next-translate/useTranslation"
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBirthdayCake, faEnvelope, faGlobeAsia, faGraduationCap, faMapMarkedAlt, faPhone, faShapes, faSchool, faPlane, faUserGraduate, faInfinity,faDatabase, faTrophy, faHeart} from '@fortawesome/free-solid-svg-icons'
 import { faCss3Alt, faCuttlefish, faEthereum, faGitAlt, faHtml5, faJs, faPython } from "@fortawesome/free-brands-svg-icons"
-import Link from "next/link"
 
+import Timeline from "@mui/lab/Timeline"
+import TimelineItem from '@mui/lab/TimelineItem';
+import TimelineSeparator from '@mui/lab/TimelineSeparator';
+import TimelineConnector from '@mui/lab/TimelineConnector';
+import TimelineContent from '@mui/lab/TimelineContent';
+import TimelineDot from '@mui/lab/TimelineDot';
 
 export default function About () {
 	let {t} = useTranslation();
@@ -65,8 +72,8 @@ export default function About () {
 				</section>
 			</section>
 
+			<h1>{t("about:education")}</h1>
 			<section id="education">
-				<h1>{t("about:education")}</h1>
 				<div className={styles.schools}>
 					<div>
 						<section>
@@ -103,8 +110,8 @@ export default function About () {
 				</div>
 			</section>
 				
+				<h1>{t("about:organisation")}</h1>
 				<section id="organisation">
-					<h1>{t("about:organisation")}</h1>
 					<div className={styles.organisation}>
 						<div>
 							<img src="https://firebasestorage.googleapis.com/v0/b/profile-retaehc.appspot.com/o/IMG%20Files%2FSPACEAC.png?alt=media&token=ee9c1705-46f9-416e-8265-0080a2d5ac9e"/>
@@ -119,8 +126,8 @@ export default function About () {
 					</div>
 				</section>
 
-				<section id="programming" className={styles.skills}>
 				<h1>{t("about:programming")}</h1>
+				<section id="skills" className={styles.skills}>
 				<section>
 					<ul className={hexstyles.hexGrid}>
 						<li>
@@ -203,10 +210,13 @@ export default function About () {
 						</li>
 					</ul>
 					</section>
+					<section>
+						<p>timeline</p>
+					</section>
 				</section>
 
+				<h1>Language Proficiency</h1>
 				<section id="language">
-					<h1>Language Proficiency</h1>
 					<div className={styles.languages}>
 						<table>
 							<thead>

@@ -2,17 +2,22 @@
   position: relative;
   min-height: 100%;
   width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   section {
     position: relative;
     display: flex;
     padding-top: 3rem;
-    flex-direction: column;
     align-items: center;
   }
 }
 .profile {
+  width: 100vw;
   position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   min-height: 70vh;
   padding-top: 0rem;
@@ -33,6 +38,7 @@
 .overview {
   position: relative;
   display: flex;
+  flex-direction: column;
   padding: 2rem;
   justify-content: space-evenly;
   h1 {
@@ -170,8 +176,17 @@
 }
 .skills {
   width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   section {
+    display: flex;
+    justify-content: center;
     width: 50%;
+  }
+  @media screen and (max-width: 900px) {
+    flex-direction: column;
   }
 }
 .languages {
