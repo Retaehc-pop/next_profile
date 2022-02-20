@@ -69,10 +69,11 @@ export const Layout = ({children}) =>{
 	<div>
 		<nav className={styles.nav}>
 				<h2 onClick={()=>setIsOpen(!isOpen)} ><FontAwesomeIcon icon={isOpen ? faXmarkCircle:faBars} size='2x'/></h2>
+				<h4><Link href="/" passHref><img src="/favicon.ico" width={50} height={50}/></Link></h4>
 				<div className={isOpen? "":styles.hidden}>
-					<Link href="/" passHref>
-						<img src="/favicon.ico" width={50} height={50}/>
-					</Link>
+				
+				{/* <div> */}
+				{/* <div className={styles.hidden}> */}
 					<Link href="/about" passHref><a>{t("about:title")}</a></Link>
 					<Link href="/projects" passHref><a>{t("projects:title")}</a></Link>
 					<Link  href="/contact" passHref><a>{t("common:contact")}</a></Link>
