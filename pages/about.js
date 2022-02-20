@@ -65,35 +65,43 @@ export default function About () {
 				</section>
 			</section>
 
-				<section id="education">
-					<h1>{t("about:education")}</h1>
-					<div className={styles.schools}>
-						<div>
-							<img src="https://firebasestorage.googleapis.com/v0/b/profile-retaehc.appspot.com/o/IMG%20Files%2FACP.jpg?alt=media&token=18be4a67-4d6c-44cb-a60c-130d6ec05911"/>
+			<section id="education">
+				<h1>{t("about:education")}</h1>
+				<div className={styles.schools}>
+					<div>
+						<section>
+						<img src="https://firebasestorage.googleapis.com/v0/b/profile-retaehc.appspot.com/o/IMG%20Files%2FACP.jpg?alt=media&token=18be4a67-4d6c-44cb-a60c-130d6ec05911"/>
 							<h2><FontAwesomeIcon icon={faShapes}/></h2>
 							<h2>Primary school</h2>
 							<h3><Link href="https://www.acp.ac.th/">Assumption College Primary School, Bangkok</Link></h3>
-						</div>
-						<div>
-							<img src="https://firebasestorage.googleapis.com/v0/b/profile-retaehc.appspot.com/o/IMG%20Files%2FAssumption_College.jpg?alt=media&token=3357e434-b61b-42ff-8567-02f25b0f2151"/>
-							<h2><FontAwesomeIcon icon={faSchool}/></h2>
-							<h2>Secondary school</h2>
-							<h3><Link href="https://www.assumption.ac.th/">Assumption College, Bangkok</Link></h3>
-						</div>
-						<div>
-							<img src="https://firebasestorage.googleapis.com/v0/b/profile-retaehc.appspot.com/o/IMG%20Files%2Fkatolische%20marienschule.jpg?alt=media&token=b779acfa-c7cc-4546-bcc1-02e39f109edd"/>
-							<h2><FontAwesomeIcon icon={faPlane}/></h2>
-							<h2>Exchange year</h2>
-							<h3><Link href="https://marienschule-potsdam.de/">Katholishe Marienschule potsdam,Germany</Link></h3>
-						</div>
-						<div>
-							<img src="https://firebasestorage.googleapis.com/v0/b/profile-retaehc.appspot.com/o/IMG%20Files%2FAssumption_College.jpg?alt=media&token=3357e434-b61b-42ff-8567-02f25b0f2151"/>
-							<h2><FontAwesomeIcon icon={faUserGraduate}/></h2>
-							<h2>high school</h2>
-							<h3><Link href="https://www.assumption.ac.th/">Assumption College, Bangkok</Link></h3>
-						</div>
+						</section>
 					</div>
-				</section>
+					<div>
+					<section>
+						<img src="https://firebasestorage.googleapis.com/v0/b/profile-retaehc.appspot.com/o/IMG%20Files%2FAssumption_College.jpg?alt=media&token=3357e434-b61b-42ff-8567-02f25b0f2151"/>
+						<h2><FontAwesomeIcon icon={faSchool}/></h2>
+						<h2>Secondary school</h2>
+						<h3><Link href="https://www.assumption.ac.th/">Assumption College, Bangkok</Link></h3>
+						</section>
+					</div>
+					<div>
+					<section>
+						<img src="https://firebasestorage.googleapis.com/v0/b/profile-retaehc.appspot.com/o/IMG%20Files%2Fkatolische%20marienschule.jpg?alt=media&token=b779acfa-c7cc-4546-bcc1-02e39f109edd"/>
+						<h2><FontAwesomeIcon icon={faPlane}/></h2>
+						<h2>Exchange year</h2>
+						<h3><Link href="https://marienschule-potsdam.de/">Katholishe Marienschule potsdam,Germany</Link></h3>
+						</section>
+					</div>
+					<div>
+					<section>
+						<img src="https://firebasestorage.googleapis.com/v0/b/profile-retaehc.appspot.com/o/IMG%20Files%2FAssumption_College.jpg?alt=media&token=3357e434-b61b-42ff-8567-02f25b0f2151"/>
+						<h2><FontAwesomeIcon icon={faUserGraduate}/></h2>
+						<h2>high school</h2>
+						<h3><Link href="https://www.assumption.ac.th/">Assumption College, Bangkok</Link></h3>
+						</section>
+					</div>
+				</div>
+			</section>
 				
 				<section id="organisation">
 					<h1>{t("about:organisation")}</h1>
@@ -111,80 +119,82 @@ export default function About () {
 					</div>
 				</section>
 
-				<section id="programming">
+				<section id="programming" className={styles.skills}>
 				<h1>{t("about:programming")}</h1>
+				<section>
 					<ul className={hexstyles.hexGrid}>
-						<li className={hexstyles.hex}>
-							<div className={hexstyles.hexIn}>
-								<a className={hexstyles.hexLink} href="#">
+						<li>
+							<div>
+								<a href="#">
 									<img src="/img/BG.JPG" alt=""/>
 									<h1><FontAwesomeIcon icon={faJs}/></h1>
 									<p>Javascript</p>
 								</a>
 							</div>
-						</li><li className={hexstyles.hex}>
-							<div className={hexstyles.hexIn}>
-								<a className={hexstyles.hexLink} href="#">
+						</li>
+						<li>
+							<div>
+								<a href="#">
 									<img src="/img/BG.JPG" alt=""/>
 									<h1><FontAwesomeIcon icon={faCss3Alt}/></h1>
 									<p>CSS</p>
 								</a>
 							</div>
-						</li><li className={hexstyles.hex}>
-							<div className={hexstyles.hexIn}>
-								<a className={hexstyles.hexLink} href="#">
+						</li><li>
+							<div>
+								<a href="#">
 									<img src="/img/BG.JPG" alt=""/>
 									<h1><FontAwesomeIcon icon={faGitAlt}/></h1>
 									<p>Git/Github</p>
 								</a>
 							</div>
-						</li><li className={hexstyles.hex}>
-							<div className={hexstyles.hexIn}>
-								<a className={hexstyles.hexLink} href="#">
+						</li><li>
+							<div>
+								<a href="#">
 									<img src="/img/BG.JPG" alt=""/>
 									<h1><FontAwesomeIcon icon={faInfinity}/></h1>
 									<p>Arduino</p>
 								</a>
 							</div>
-						</li><li className={hexstyles.hex}>
-							<div className={hexstyles.hexIn}>
-								<a className={hexstyles.hexLink} href="#">
+						</li><li>
+							<div >
+								<a href="#">
 									<img src="/img/BG.JPG" alt=""/>
 									<h1><FontAwesomeIcon icon={faCuttlefish}/></h1>
 									<p>C/C++</p>
 								</a>
 							</div>
 						</li>
-						<li className={hexstyles.hex}>
-							<div className={hexstyles.hexIn}>
-								<a className={hexstyles.hexLink} href="#">
+						<li>
+							<div>
+								<a href="#">
 									<img src="/img/BG.JPG" alt=""/>
 									<h1><FontAwesomeIcon icon={faHtml5}/></h1>
 									<p>HTML</p>
 								</a>
 							</div>
 						</li>
-						<li className={hexstyles.hex}>
-							<div className={hexstyles.hexIn}>
-								<a className={hexstyles.hexLink} href="#">
+						<li >
+							<div >
+								<a href="#">
 									<img src="/img/BG.JPG" alt=""/>
 									<h1><FontAwesomeIcon icon={faEthereum}/></h1>
 									<p>Solidity</p>
 								</a>
 							</div>
 						</li>
-						<li className={hexstyles.hex}>
-							<div className={hexstyles.hexIn}>
-								<a className={hexstyles.hexLink} href="#">
+						<li >
+							<div >
+								<a href="#">
 									<img src="/img/BG.JPG" alt=""/>
 									<h1><FontAwesomeIcon icon={faPython}/></h1>
 									<p>Python</p>
 								</a>
 							</div>
 						</li>
-						<li className={hexstyles.hex}>
-							<div className={hexstyles.hexIn}>
-								<a className={hexstyles.hexLink} href="#">
+						<li >
+							<div >
+								<a href="#">
 									<img src="/img/BG.JPG" alt=""/>
 									<h1><FontAwesomeIcon icon={faDatabase}/></h1>
 									<p>Database</p>
@@ -192,34 +202,46 @@ export default function About () {
 							</div>
 						</li>
 					</ul>
+					</section>
 				</section>
+
 				<section id="language">
 					<h1>Language Proficiency</h1>
 					<div className={styles.languages}>
-						<div>
-							<h1>Thai</h1>
-							<p>Native</p>
-							<p>{t('about:speaking')} : Native</p>
-							<p>{t('about:listening')} : Native</p>
-							<p>{t('about:reading')} : Native</p>
-							<p>{t('about:writing')} : Native</p>
-						</div>
-						<div>
-							<h1>English</h1>
-							<p>C2 : IELST overall 7</p>
-							<p>{t('about:speaking')} : 6.5/9</p>
-							<p>{t('about:listening')} : 8.5/9</p>
-							<p>{t('about:reading')} : 7.5/9</p>
-							<p>{t('about:writing')} : 5.5/9</p>
-						</div>
-						<div>
-							<h1>German</h1>
-							<p>B1 : Geothe</p>
-							<p>{t('about:speaking')} : B2</p>
-							<p>{t('about:listening')} : B1</p>
-							<p>{t('about:reading')} : B1</p>
-							<p>{t('about:writing')} : B1</p>
-						</div>
+						<table>
+							<thead>
+								<th>Languages</th>
+								<th>Overall</th>
+								<th>{t('about:speaking')}</th>
+								<th>{t('about:listening')}</th>
+								<th>{t('about:reading')}</th>
+								<th>{t('about:writing')}</th>
+							</thead>
+							<tr>
+								<th>Thai</th>
+								<td>Native</td>
+								<td>Native</td>
+								<td>Native</td>
+								<td>Native</td>
+								<td>Native</td>
+							</tr>
+							<tr>
+								<th>English</th>
+								<td>7</td>
+								<td>6.5</td>
+								<td>8.5</td>
+								<td>7.5</td>
+								<td>5.5</td>
+							</tr>
+							<tr>
+								<th>German</th>
+								<td>B1</td>
+								<td>B2</td>
+								<td>B1</td>
+								<td>B1</td>
+								<td>B1</td>
+							</tr>
+						</table>
 					</div>
 				</section>
 			</main>
