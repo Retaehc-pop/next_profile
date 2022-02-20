@@ -15,6 +15,7 @@ import TimelineSeparator from '@mui/lab/TimelineSeparator';
 import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
+import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 
 export default function About () {
 	let {t} = useTranslation();
@@ -126,7 +127,7 @@ export default function About () {
 					</div>
 				</section>
 
-				<h1>{t("about:programming")}</h1>
+				<h1>Skills and Experience</h1>
 				<section id="skills" className={styles.skills}>
 				<section>
 					<ul className={hexstyles.hexGrid}>
@@ -211,7 +212,34 @@ export default function About () {
 					</ul>
 					</section>
 					<section>
-						<p>timeline</p>
+					<Timeline>
+						<TimelineItem>
+						<TimelineOppositeContent>
+								2021
+							</TimelineOppositeContent>
+							<TimelineSeparator>
+								<TimelineDot />
+								<TimelineConnector />
+							</TimelineSeparator>
+							<TimelineContent>Vice President of SPACE AC</TimelineContent>
+						</TimelineItem>
+						<TimelineItem>
+							<TimelineSeparator>
+								<TimelineDot />
+								<TimelineConnector />
+							</TimelineSeparator>
+							<TimelineContent>District President</TimelineContent>
+						</TimelineItem>
+						<TimelineItem>
+						<TimelineOppositeContent>
+								2020
+							</TimelineOppositeContent>
+							<TimelineSeparator>
+								<TimelineDot />
+							</TimelineSeparator>
+							<TimelineContent>President of AC Interact</TimelineContent>
+						</TimelineItem>
+					</Timeline>
 					</section>
 				</section>
 

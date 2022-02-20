@@ -9,7 +9,6 @@
   section {
     position: relative;
     display: flex;
-    padding-top: 3rem;
     align-items: center;
   }
 }
@@ -183,10 +182,19 @@
   section {
     display: flex;
     justify-content: center;
-    width: 50%;
+    width: 30%;
   }
   @media screen and (max-width: 900px) {
+    // flex-direction: column;
+    section {
+      width: 50%;
+    }
+  }
+  @media screen and (max-width: 600px) {
     flex-direction: column;
+    section {
+      width: 100%;
+    }
   }
 }
 .languages {
