@@ -79,14 +79,8 @@
     transition-duration: 1000ms;
     padding: 0em 0rem;
     height: min-content;
-    // z-index: -1;
-    &:hover {
-      transition-duration: 500ms;
-      padding: 0em 0rem;
-    }
     h4 {
       position: fixed;
-      // visibility: hidden;
       top: 10px;
       left: 10px;
     }
@@ -103,7 +97,6 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      background-color: var(--color-background);
       transition-duration: 0.3s;
       width: 100%;
     }
