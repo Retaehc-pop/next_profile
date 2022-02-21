@@ -7,11 +7,12 @@ import Head from "next/head";
 import { useEffect, useState } from "react";
 import styles from '../../styles/project.module.scss'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faCss3Alt, faCuttlefish, faGitAlt, faGithub, faHtml5, faJs, faNodeJs, faNpm, faPython, faRaspberryPi, faReact, faSass } from "@fortawesome/free-brands-svg-icons";
 
 import AwesomeSlider from 'react-awesome-slider';
 import withAutoplay from 'react-awesome-slider/dist/autoplay';
 import 'react-awesome-slider/dist/styles.css';
+import { faFireAlt, faInfinity } from "@fortawesome/free-solid-svg-icons";
 
 
 
@@ -51,9 +52,59 @@ export const getStaticProps = async (context) => {
 export default function Project({ project }) {
   const AutoplaySlider = withAutoplay(AwesomeSlider)
   let images = project.imgs
+
+  function getTools(){
+    let collection = [];
+    project.tools.forEach((tool)=>{
+      switch(tool){
+        case "python":
+          collection.push(faPython)
+          break;
+        case "js":
+          collection.push(faJs)
+          break;
+        case "css":
+          collection.push(faCss3Alt)
+          break;
+        case "html":
+          collection.push(faHtml5)
+          break;
+        case "node.js":
+          collection.push(faNodeJs)
+          break;
+        case "github":
+          collection.push(faGitAlt)
+          break;
+        case "rpi":
+          collection.push(faRaspberryPi)
+          break;
+        case "arduino":
+          collection.push(faInfinity)
+          break;
+        case "c":
+          collection.push(faCuttlefish)
+          break;
+        case "react":
+          collection.push(faReact)
+          break;
+        case "sass":
+          collection.push(faSass)
+          break;
+        case "npm":
+          collection.push(faNpm)
+          break;
+        case "database":
+          collection.push(faFireAlt)
+          break;
+    }
+    })
+    console.log(collection)
+    return collection;
+  }
   useEffect(() => {
     images.unshift(project.cover)
     console.log("project")
+    
 	}, []);
   return (
     <div>
@@ -74,22 +125,27 @@ export default function Project({ project }) {
               }
             </AutoplaySlider>
           </section>
-          <section>
-            <h1> {project.title} <a href={project.sourceCode}><FontAwesomeIcon icon={faGithub}></FontAwesomeIcon></a></h1>
-            <h2> {project.subtitle} || As : {project.role}</h2>
+          <section className={styles.info}>
+            <main>
+              <h1>{project.title}</h1>
+              <h4>({project.role})</h4>
+            </main>
+            <div>
+              <h3><a href={project.source}><FontAwesomeIcon icon={faGithub}></FontAwesomeIcon></a></h3>
+            {
+                getTools().map((icon)=>(
+                  <h3 key={icon}><FontAwesomeIcon icon={icon}/></h3>))
+            }
+            </div>
+            <h2> {project.subtitle}</h2>
             <p>{project.description}</p>
-            <div className={styles.tag}>
-              <h2>Tag :</h2>
+            <div>
               {
                 project.categories.map(category=>(
-                  <h3 key={category}>{category}</h3>
+                  <span key={category}>{category}</span>
                 ))
               }
-              {
-                project.tools.map(tool=>(
-                  <h3 key={tool}>{tool}</h3>
-                ))
-              }
+              
             </div>
           </section>
         </main>

@@ -1,35 +1,9 @@
 .main {
   padding: 5rem 0rem;
-  min-height: 70vh;
   display: flex;
-  align-items: center;
   section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     min-width: 50vw;
     padding: 0rem 3rem;
-  }
-  h1,
-  h2 {
-    text-align: center;
-  }
-  h3 {
-    font-size: 1rem;
-    margin: 1rem;
-    padding: 0.5rem 1rem;
-    border-radius: 25px;
-    background-color: var(--color-secondary-accent);
-  }
-  .tag {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    & * {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
   }
   @media screen and (max-width: 1200px) {
     flex-direction: column;
@@ -37,17 +11,48 @@
       width: 100vw;
     }
   }
-  @media screen and (max-width: 600px) {
-    flex-direction: column;
-    section {
-      width: 100vw;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    font-size: 2rem;
+    margin: 0.5rem;
+  }
+  h2 {
+    text-align: center;
+  }
+  h3 {
+    font-size: 2rem;
+    padding: 0rem 0.5rem;
+    &:hover {
+      transform: rotate(360deg);
+      transition-duration: 1000ms;
     }
-    .tag {
-      & * {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
+  }
+  p {
+    text-indent: 1rem;
+    font-size: 1rem;
+  }
+  div,
+  main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  span {
+    font-size: 1rem;
+    margin: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    background-color: var(--color-secondary-accent);
+  }
+  @media screen and (max-width: 400px) {
+    main {
+      flex-direction: column;
     }
   }
 }
