@@ -9,6 +9,7 @@
   z-index: 10000;
   background-color: var(--color-background);
   transition-duration: 500ms;
+  border-bottom: 3px solid rgb(255, 255, 255);
 
   div {
     display: contents;
@@ -79,6 +80,8 @@
     transition-duration: 1000ms;
     padding: 0em 0rem;
     height: min-content;
+    // background-color: transparent;
+    border-bottom: 0px solid rgb(255, 255, 255);
     h4 {
       position: fixed;
       top: 10px;

@@ -6,7 +6,7 @@ import { Layout } from "../components/layout/layout"
 import useTranslation from "next-translate/useTranslation"
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBirthdayCake, faEnvelope, faGlobeAsia, faGraduationCap, faMapMarkedAlt, faPhone, faShapes, faSchool, faPlane, faUserGraduate, faInfinity,faDatabase, faTrophy, faHeart, faAtom, faFire} from '@fortawesome/free-solid-svg-icons'
+import { faBirthdayCake, faEnvelope, faGlobeAsia, faGraduationCap, faMapMarkedAlt, faPhone, faShapes, faSchool, faPlane, faUserGraduate, faInfinity,faDatabase, faTrophy, faHeart, faAtom, faFire, faSignature} from '@fortawesome/free-solid-svg-icons'
 import { faCss3Alt, faCuttlefish, faGitAlt, faHtml5, faJs, faNodeJs, faNpm, faPython, faRaspberryPi, faReact, faSass } from "@fortawesome/free-brands-svg-icons"
 
 import AwsSliderStyle from "react-awesome-slider/dist/custom-animations/fall-animation.css"
@@ -50,6 +50,10 @@ export default function About () {
 				<div>
 					<section>
 						<span>
+							<p><FontAwesomeIcon icon={faSignature}/> Nickname</p>
+							<h5>Pop</h5>
+						</span>
+						<span>
 							<p><FontAwesomeIcon icon={faBirthdayCake}/> {t("about:dateOfBirth")}</p>
 							<h5>20 March 2003</h5>
 						</span>
@@ -79,7 +83,7 @@ export default function About () {
 						</span>
 						<span>
 							<p><FontAwesomeIcon icon={faHeart}/> Interest</p>
-							<h5>Game Dev, AI, Web3</h5>
+							<h5>Game Dev, AI, Web Dev</h5>
 						</span>
 					</section>
 					<main>
@@ -89,11 +93,11 @@ export default function About () {
 							cssModule={AwsSliderStyle}
 							interval={3000} 
 							cancelOnInteraction={false}>
-							<div data-src = "https://firebasestorage.googleapis.com/v0/b/profile-retaehc.appspot.com/o/IMG%20Files%2FAssumption_College.jpg?alt=media&token=3357e434-b61b-42ff-8567-02f25b0f2151"/>	
-							<div data-src = "https://firebasestorage.googleapis.com/v0/b/profile-retaehc.appspot.com/o/IMG%20Files%2FAssumption_College.jpg?alt=media&token=3357e434-b61b-42ff-8567-02f25b0f2151"/>	
-							<div data-src = "https://firebasestorage.googleapis.com/v0/b/profile-retaehc.appspot.com/o/IMG%20Files%2FAssumption_College.jpg?alt=media&token=3357e434-b61b-42ff-8567-02f25b0f2151"/>	
-							<div data-src = "https://firebasestorage.googleapis.com/v0/b/profile-retaehc.appspot.com/o/IMG%20Files%2FAssumption_College.jpg?alt=media&token=3357e434-b61b-42ff-8567-02f25b0f2151"/>	
-							<div data-src = "https://firebasestorage.googleapis.com/v0/b/profile-retaehc.appspot.com/o/IMG%20Files%2FAssumption_College.jpg?alt=media&token=3357e434-b61b-42ff-8567-02f25b0f2151"/>	
+							<div data-src = "https://firebasestorage.googleapis.com/v0/b/profile-retaehc.appspot.com/o/My%20Pic%2Fpic2.jpg?alt=media&token=be6d9253-c824-4644-87bd-bc583fd26f31"/>	
+							<div data-src = "https://firebasestorage.googleapis.com/v0/b/profile-retaehc.appspot.com/o/My%20Pic%2Fpic1.jpg?alt=media&token=e7c12648-0d8a-467d-a75c-156329cb916c"/>	
+							<div data-src = "https://firebasestorage.googleapis.com/v0/b/profile-retaehc.appspot.com/o/My%20Pic%2FLINE_ALBUM_2022.2.8_220209.jpg?alt=media&token=f60a776a-4fa2-49c5-a1fa-17f11ccd901d"/>	
+							<div data-src = "https://firebasestorage.googleapis.com/v0/b/profile-retaehc.appspot.com/o/My%20Pic%2FArtboard4.png?alt=media&token=53fb6fb1-8826-4fc6-8870-4b48a1eadb41"/>	
+							{/* <div data-src = "https://firebasestorage.googleapis.com/v0/b/profile-retaehc.appspot.com/o/IMG%20Files%2FAssumption_College.jpg?alt=media&token=3357e434-b61b-42ff-8567-02f25b0f2151"/>	 */}
 							</AutoplaySlider>
 						</main>
 				</div>
@@ -137,7 +141,7 @@ export default function About () {
 				</div>
 			</section>
 				
-				<h1>{t("about:organisation")}</h1>
+				{/* <h1>{t("about:organisation")}</h1>
 				<section id="organisation">
 					<div className={styles.organisation}>
 						<div>
@@ -151,7 +155,7 @@ export default function About () {
 							<h4>{t("about:interactRole")}</h4>
 						</div>
 					</div>
-				</section>
+				</section> */}
 
 				<h1>Skills and Experience</h1>
 				<section id="skills" className={styles.skills}>
@@ -290,6 +294,17 @@ export default function About () {
 					<Timeline>
 						<TimelineItem>
 						<TimelineOppositeContent>
+								2022
+							</TimelineOppositeContent>
+							<TimelineSeparator>
+								<TimelineDot />
+								<TimelineConnector />
+							</TimelineSeparator>
+							<TimelineContent>Graduated at Assumption College</TimelineContent>
+						</TimelineItem>
+						
+						<TimelineItem>
+						<TimelineOppositeContent>
 								2021
 							</TimelineOppositeContent>
 							<TimelineSeparator>
@@ -298,6 +313,7 @@ export default function About () {
 							</TimelineSeparator>
 							<TimelineContent>Vice President at SPACE AC</TimelineContent>
 						</TimelineItem>
+
 						<TimelineItem>
 							<TimelineSeparator>
 								<TimelineDot />
@@ -305,6 +321,7 @@ export default function About () {
 							</TimelineSeparator>
 							<TimelineContent>3350 Interact District Vice President</TimelineContent>
 						</TimelineItem>
+
 						<TimelineItem>
 						<TimelineOppositeContent>
 								2020
@@ -314,6 +331,7 @@ export default function About () {
 							</TimelineSeparator>
 							<TimelineContent>President of AC Interact</TimelineContent>
 						</TimelineItem>
+
 					</Timeline>
 					</section>
 				</section>

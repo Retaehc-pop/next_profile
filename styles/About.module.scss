@@ -81,6 +81,9 @@
   h5 {
     text-align: center;
   }
+  img {
+    object-fit: cover;
+  }
   @media screen and (max-width: 1000px) {
     div {
       flex-direction: column;

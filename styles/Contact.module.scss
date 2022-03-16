@@ -5,22 +5,28 @@
   align-items: center;
   justify-content: center;
   min-height: 70vh;
-  padding: 10rem;
+  padding: 1rem;
   section {
     padding: 2rem;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
   }
   div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 3rem;
     border: 5px;
     border-color: var(--color-primary);
   }
   h2 {
     font-size: 2rem;
+    margin: 0;
   }
   h4 {
     font-size: 1rem;
+    text-align: center;
   }
   @media screen and (max-width: 1200px) {
     section {

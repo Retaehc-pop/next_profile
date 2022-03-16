@@ -23,7 +23,7 @@ import { collection, query, where, doc, getDoc, getDocs, arrayRemove } from "fir
 
 import useTranslation from "next-translate/useTranslation"
 import { Layout } from '../components/layout/layout'
-import { faGit, faGitAlt, faGithub, faJs, faPython } from '@fortawesome/free-brands-svg-icons'
+import { faGit, faGitAlt, faGithub, faJs, faPython, faReact } from '@fortawesome/free-brands-svg-icons'
 
 export const getStaticProps = async () => {
 	const allProject = [];
@@ -75,15 +75,15 @@ export default function Home({ projects }) {
           <h1 data-speed="-1" className="layer" >Retaehc</h1>
           <p data-speed="2" className="layer" style={{display:"flex",top:"10%",left:"40%"}}><FontAwesomeIcon icon={faKeyboard}/></p>
           <p data-speed="1" className="layer" style={{display:"flex",top:"10%",left:"80%"}}><FontAwesomeIcon icon={faSatelliteDish}/></p>
-          <p data-speed="1" className="layer" style={{display:"flex",top:"15%",left:"60%"}}><FontAwesomeIcon icon={faAtom}/></p>
+          <p data-speed="1" className="layer" style={{display:"flex",top:"25%",left:"50%"}}><FontAwesomeIcon icon={faReact}/></p>
           <p data-speed="2" className="layer" style={{display:"flex",top:"15%",left:"15%"}}><FontAwesomeIcon icon={faPython}/></p>
-          <p data-speed="2" className="layer" style={{display:"flex",top:"45%",left:"80%"}}><FontAwesomeIcon icon={faRocket}/></p>
-          <p data-speed="8" className="layer" style={{display:"flex",top:"50%",left:"20%"}}><FontAwesomeIcon icon={faGitAlt}/></p>
-          <p data-speed="3" className="layer" style={{display:"flex",top:"60%",left:"40%"}}><FontAwesomeIcon icon={faCamera}/></p>
-          <p data-speed="6" className="layer" style={{display:"flex",top:"75%",left:"90%"}}><FontAwesomeIcon icon={faCode}/></p>
-          <p data-speed="7" className="layer" style={{display:"flex",top:"70%",left:"65%"}}><FontAwesomeIcon icon={faGithub}/></p>
+          <p data-speed="2" className="layer" style={{display:"flex",top:"30%",left:"80%"}}><FontAwesomeIcon icon={faRocket}/></p>
+          <p data-speed="8" className="layer" style={{display:"flex",top:"30%",left:"10%"}}><FontAwesomeIcon icon={faGitAlt}/></p>
+          <p data-speed="3" className="layer" style={{display:"flex",top:"65%",left:"40%"}}><FontAwesomeIcon icon={faCamera}/></p>
+          <p data-speed="6" className="layer" style={{display:"flex",top:"60%",left:"10%"}}><FontAwesomeIcon icon={faCode}/></p>
+          <p data-speed="7" className="layer" style={{display:"flex",top:"65%",left:"75%"}}><FontAwesomeIcon icon={faGithub}/></p>
           <p data-speed="2" className="layer" style={{display:"flex",top:"80%",left:"10%"}}><FontAwesomeIcon icon={faCodeBranch}/></p>
-          <p data-speed="3" className="layer" style={{display:"flex",top:"80%",left:"50%"}}><FontAwesomeIcon icon={faJs}/></p>
+          <p data-speed="3" className="layer" style={{display:"flex",top:"80%",left:"60%"}}><FontAwesomeIcon icon={faJs}/></p>
           <p data-speed="4" className="layer" style={{display:"flex",top:"80%",left:"80%"}}><FontAwesomeIcon icon={faMicrochip}/></p>
           <p data-speed="2" className="layer" style={{display:"flex",top:"84%",left:"30%"}}><FontAwesomeIcon icon={faSatellite}/></p>
         </section>

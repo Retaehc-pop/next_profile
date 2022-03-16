@@ -120,7 +120,7 @@ export default function Project({ project }) {
             <AutoplaySlider play={true} interval={2000} bullets={false} cancelOnInteraction={false}>
               {
                 images.map(img=>(
-                  <div key={img} data-src={img}/>
+                  <div className={styles.img} key={img} data-src={img}/>
                 ))
               }
             </AutoplaySlider>
